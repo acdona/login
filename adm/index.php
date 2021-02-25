@@ -7,6 +7,12 @@
     <title>AMACD - Login</title>
 </head>
 <body>
-    página inicial de login para teste
+    página inicial de login para teste<br>
 </body>
 </html>
+
+<?php
+ 
+    echo "mensagem em php vinda do index";
+ 
+?>
