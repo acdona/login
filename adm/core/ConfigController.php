@@ -137,7 +137,7 @@ class ConfigController extends Config
      */
     public function load(): void {
   
-        $this->class = "\\App\\sts\\Controllers\\" . $this->urlController;
+        $this->class = "\\App\\adms\\Controllers\\" . $this->urlController;
           
         if(class_exists($this->class)) {  
             $this->loadClass();
@@ -149,9 +149,9 @@ class ConfigController extends Config
     }
 
     private function loadClass() {
-        $loadClass = new $this->class();
-        if(method_exists($loadClass, "index")) {
-            $loadClass->index();
+        $loadClassAdm = new $this->class();
+        if(method_exists($loadClassAdm, "index")) {
+            $loadClassAdm->index();
         } else {
             die('Erro: Por favor tente novamente. Caso o problema persista, entre em contato com o administrador ' . EMAILADM . '<br>');
         }
