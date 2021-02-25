@@ -35,8 +35,8 @@ class ConfigController extends Config
     /** @var array $slugMethod Receives method name converted by slug.   */
     private string $slugMethod;
 
-     /** @var array $urlClear Clear special characters from url. */
-     private string $urlClear;
+     /** @var array $clearUrl Clear special characters from url. */
+     private string $clearUrl;
 
     /** @var array $format Receives the array of special characters that must be replaced.  */
     private array $format;
@@ -45,9 +45,9 @@ class ConfigController extends Config
 
     /**  Executes when it is instantiated. */
     public function __construct() {
-
+        
         /**Instance the config for Global Constants. */
-        $this->configSts();
+        $this->configAdms();
         if (!empty(filter_input(INPUT_GET, 'url', FILTER_DEFAULT))) {
             $this->url = filter_input(INPUT_GET, 'url', FILTER_DEFAULT);            
     
@@ -90,6 +90,9 @@ class ConfigController extends Config
         }
 
         /** testing */
+        // echo "Controller: " . $this->urlController . "<br>";
+        // echo "Método: " . $this->urlMethod . "<br>";
+        // echo "Parâmetro: " . $this->urlParameter . "<br>";
     
     }
    
@@ -116,17 +119,17 @@ class ConfigController extends Config
 
     private function clearUrl($url) {
         // Remove all HTML and PHP tags.
-        $this->urlClear = strip_tags($url);
+        $this->clearUrl = strip_tags($url);
         // Remove white spaces
-        $this->urlClear = trim($this->urlClear);
+        $this->clearUrl = trim($this->clearUrl);
         // Remove slash at the end of the URL
-        $this->urlClear = rtrim($this->urlClear, "/");
+        $this->clearUrl = rtrim($this->clearUrl, "/");
         // Replacement blocks
         $this->format['a'] = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜüÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿRr"!@#$%&*()_-+={[}]?;:.,\\\'<>°ºª´`¨|^ ';
         $this->format['b'] = 'aaaaaaaceeeeiiiidnoooooouuuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyRr--------------------------------------';
-        $this->urlClear = strtr(utf8_decode($this->urlClear), utf8_decode($this->format['a']), $this->format['b']);
+        $this->clearUrl = strtr(utf8_decode($this->clearUrl), utf8_decode($this->format['a']), $this->format['b']);
 
-        return $this->urlClear;
+        return $this->clearUrl;
     }
 
     /**
@@ -136,29 +139,14 @@ class ConfigController extends Config
      * @return void
      */
     public function load(): void {
-  
-        $this->class = "\\App\\adms\\Controllers\\" . $this->urlController;
-          
-        if(class_exists($this->class)) {  
-            $this->loadClass();
-        } else {
-            $this->urlController = $this->slugController(CONTROLLERERROR);
-            $this->load();
-        }
        
-    }
-
-    private function loadClass() {
-        $loadClassAdm = new $this->class();
-        if(method_exists($loadClassAdm, "index")) {
-            $loadClassAdm->index();
-        } else {
-            die('Erro: Por favor tente novamente. Caso o problema persista, entre em contato com o administrador ' . EMAILADM . '<br>');
-        }
+        $loadAdmPage = new \Core\loadAdmPage();
+        $loadAdmPage->loadPage($this->urlController, $this->urlMethod, $this->urlParameter); 
+          
         
     }
 
-
+     
 }   
 
 ?>

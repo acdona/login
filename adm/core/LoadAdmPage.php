@@ -13,7 +13,7 @@ class LoadAdmPage
     private string $urlMethod;
     private string $urlParameter;
     private string $class;
-    private $publicPage;
+    private array $publicPage;
     private array $restrictedPage;
      
     public function loadPage($urlController = null, $urlMethod = null, $urlParameter = null){
@@ -36,20 +36,25 @@ class LoadAdmPage
     }    
        
     private function loadMethod() {
-        $classLoad = new $this->class();
-        if(method_exists($classLoad, $this->urlMethod)){
-            $classLoad->{$this->urlMethod}($this->urlParameter);
+
+        $loadClass = new $this->class();
+
+
+        if(method_exists($loadClass, $this->urlMethod)){
+            
+            $loadClass->{$this->urlMethod}($this->urlParameter);
             
         }else{
-            //die("Erro: Por favor tente novamente. Caso o problema persista, entre em contato o administrador " . EMAILADM . "!<br>");
+      
+            die("Erro: o método não foi encontrado Por favor tente novamente. Caso o problema persista, entre em contato o administrador " . EMAILADM . "!<br>");
            
-            $urlDestiny = URLADM . "error/index";
-            header("Location: $urlDestiny");
+        //     $urlDestiny = URLADM . "error/index";
+        //     header("Location: $urlDestiny");
         }        
     }
 
     private function publicPage() {
-        $this->publicPage = ["Login"];
+        $this->publicPage = ["Login", "Error", "Home", "Logout"];
 
         if(in_array($this->urlController, $this->publicPage)) {
             $this->class = "\\App\adms\\Controllers\\" . $this->urlController;
@@ -60,22 +65,26 @@ class LoadAdmPage
 
     private function restrictedPage() {
         $this->restrictedPage = ["Dashboard"];
-
+       
         if(in_array($this->urlController, $this->restrictedPage)) {
+            
             $this->checkLogin();
         } else {
-           // $_SESSION['msg'] = "Erro: Página não encontrada67!!<br>";
+            $_SESSION['msg'] = "Erro: Página não encontrada72!!<br>";
             $urlDestiny = URLADM . "error/index";
             header("Location: $urlDestiny");
         }
     }
 
     private function checkLogin() {
+        
         if(isset($_SESSION['user_id']) AND isset($_SESSION['user_name']) AND isset($_SESSION['user_email'])) {
+            exit("verdadeiro para os testes");
             $this->class = "\\App\\adms\\Controllers\\" . $this->urlController;
         } else {
+            
             $_SESSION['msg'] = "Erro: Página não encontrada!<br>";
-            $urlDestiny = URL . "home/index";
+            $urlDestiny = URLADM . "home/index";
             header("Location: $urlDestiny");
         }
     }
