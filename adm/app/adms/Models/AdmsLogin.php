@@ -23,7 +23,7 @@ class AdmsLogin extends helper\AdmsConn
     }
 
     function getDatabaseResult() {
-        return $this->fdatabaseResult;
+        return $this->databaseResult;
     }
 
     public function login(array $data=null) {

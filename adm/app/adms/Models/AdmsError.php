@@ -19,9 +19,9 @@ class AdmsError
 
     public function view() {
         
-        // $viewError = new \App\sts\Models\helper\StsRead();
+        // $viewError = new \App\adms\Models\helper\AdmsRead();
         // $viewError->fullRead("SELECT title_error, description, image_error
-        //         FROM sts_errors
+        //         FROM adms_errors
         //         LIMIT :limit", "limit=1");
         // $this->dataError = $viewError->getResult();
         // return $this->dataError[0];

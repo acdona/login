@@ -1,12 +1,7 @@
 <?php
-namespace App\sts\Models\helper;
+namespace App\adms\Models\helper;
 
 use Exception;
-
-if (!defined('R4F5CC')) {
-    header("Location: /");
-    die("Erro: Página não encontrada!");
-}
 
 /**
  * Classe gernérica para cadastrar registro no banco de dados
@@ -14,7 +9,7 @@ if (!defined('R4F5CC')) {
  * @author ACD
  */
 
-class StsCreate extends StsConn
+class AdmsCreate extends AdmsConn
 {
 
     /** @var string $table Recebe o nome da tabela */

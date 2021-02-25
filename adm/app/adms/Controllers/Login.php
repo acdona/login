@@ -14,7 +14,7 @@ namespace App\adms\Controllers;
 class Login
 {
 
-    private array $data;
+    private $data;
     private $dataForm;
 
     public function access() {
@@ -34,7 +34,7 @@ class Login
             }            
         }
 
-        $this->data = [];
+        // $this->data = [];
 
         $loadView = new \Core\ConfigView("adms/Views/login/access", $this->data);
         $loadView->render();

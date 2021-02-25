@@ -32,18 +32,18 @@ class ConfigView
        }
    
         /**
-        * Loaf the VIEW.
+        * Load the VIEW.
         * Check that the file exists. If it exists, charge it, if it doesn't stop charging.
         * 
         * @return void
         */
        public function render() {
            if(file_exists('app/' . $this->name . '.php')){
-           //    include 'app/sts/Views/include/header.php';
-          //     include 'app/sts/Views/include/sidebar.php';
+           //    include 'app/adms/Views/include/header.php';
+          //     include 'app/adms/Views/include/sidebar.php';
                include 'app/' . $this->name . '.php';
-          //     include 'app/sts/Views/include/footer.php';
-          //     include 'app/sts/Views/include/libraries_js.php';
+          //     include 'app/adms/Views/include/footer.php';
+          //     include 'app/adms/Views/include/libraries_js.php';
            } else {
                // die("Erro: Por favor tente novamente. Caso o problema persista, entre em contato com o administrador " . EMAILADM . "<br>");
               echo "Erro ao carregar a view: {$this->name}";

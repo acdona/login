@@ -24,7 +24,7 @@ class Home
      */
     public function index() : void {   
         $this->data = [];
-         /** Load StsHome Models */   
+         /** Load AdmsHome Models */   
         $home = new \App\adms\Models\AdmsHome();
         $home->index();
 

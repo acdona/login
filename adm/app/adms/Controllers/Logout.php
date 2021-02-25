@@ -18,7 +18,7 @@ class Logout
         unset($_SESSION['user_id'], $_SESSION['user_nome'], $_SESSION['user_email']);
         
         $_SESSION['msg'] = '<div class="alert alert-success" role="alert">Deslogado com sucesso!</div>';
-        $urlDestino = URLADM . 'login/index';
+        $urlDestino = URLADM . 'login/access';
         header("Location: $urlDestino");
     }
 

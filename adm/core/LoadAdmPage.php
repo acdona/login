@@ -67,7 +67,7 @@ class LoadAdmPage
         $this->restrictedPage = ["Dashboard"];
        
         if(in_array($this->urlController, $this->restrictedPage)) {
-            
+        
             $this->checkLogin();
         } else {
             $_SESSION['msg'] = "Erro: Página não encontrada72!!<br>";
@@ -79,10 +79,10 @@ class LoadAdmPage
     private function checkLogin() {
         
         if(isset($_SESSION['user_id']) AND isset($_SESSION['user_name']) AND isset($_SESSION['user_email'])) {
-            exit("verdadeiro para os testes");
+       
             $this->class = "\\App\\adms\\Controllers\\" . $this->urlController;
         } else {
-            
+      
             $_SESSION['msg'] = "Erro: Página não encontrada!<br>";
             $urlDestiny = URLADM . "home/index";
             header("Location: $urlDestiny");

@@ -2,7 +2,7 @@
     //Ler o registro da página erro retornado do banco de dados
     //A função extract é utilizada para extrair o array e imprimir através do nome da chave
    // extract($this->dados['error']);
-   // $image_error = URL . "app/sts/assets/images/error/" . $image_error;   
+   // $image_error = URL . "app/adms/assets/images/error/" . $image_error;   
 ?>
 <div class="content p-1 head-error">
     <div class="container">
