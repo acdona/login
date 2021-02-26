@@ -31,7 +31,7 @@ class AdmsRead extends AdmsConn
      * 
      * @return array Returns the data array.
      */
-    function getResult(): array {
+    function getReadingResult(): array {
         return $this->result;
     }
 

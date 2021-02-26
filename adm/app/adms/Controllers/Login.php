@@ -13,28 +13,29 @@ namespace App\adms\Controllers;
 */
 class Login
 {
-
+    /** @var array $data Receives the data that must be sent to VIEW. */
     private array $data;
-    private array $dataForm;
+    /** @var array $formData Receives the data send by the form. */
+    private array $formData;
 
     public function access() {
 
         if(!is_null(filter_input_array(INPUT_POST, FILTER_DEFAULT))){
-            $this->dataForm = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+            $this->formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         } else {
-            $dataForm=[];
+            //$formData=[];
         }
 
-        if (!empty($this->dataForm['SendLogin'])) {
+        if (!empty($this->formData['SendLogin'])) {
             $valLogin= new \App\adms\Models\AdmsLogin();
-            $valLogin->login($this->dataForm);
+            $valLogin->login($this->formData);
             if($valLogin->getResult()){
                 
                 $urlDestiny = URLADM . "dashboard/index";
                 header("Location: $urlDestiny");
                 
             }else{
-                $this->data['form'] = $this->dataForm;
+                $this->data['form'] = $this->formData;
             }            
         }
         

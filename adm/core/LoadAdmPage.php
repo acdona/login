@@ -28,7 +28,7 @@ class LoadAdmPage
             $this->loadMethod();
         } else {
             $this->urlController = $this->slugController(CONTROLLER);
-            $this->urlMethod = $this->slugMetodo(METHOD);
+            $this->urlMethod = $this->slugMethod(METHOD);
             $this->urlParameter = "";
             $this->class = "\\App\\adms\\Controllers\\" . $this->urlController;
             $this->loadMethod();
@@ -54,11 +54,13 @@ class LoadAdmPage
     }
 
     private function publicPage() {
-        $this->publicPage = ["Login", "Error", "Home", "Logout"];
+        $this->publicPage = ["Login", "Error", "Home", "Logout", "NewUser"];
 
         if(in_array($this->urlController, $this->publicPage)) {
             $this->class = "\\App\adms\\Controllers\\" . $this->urlController;
+            
         } else {
+            
             $this->restrictedPage();
         }
     }
@@ -70,7 +72,8 @@ class LoadAdmPage
         
             $this->checkLogin();
         } else {
-            $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Página não encontrada!!</div>';
+           
+            $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Página não encontrada!</div>';
             
             $urlDestiny = URLADM . "error/index";
             header("Location: $urlDestiny");
@@ -83,9 +86,9 @@ class LoadAdmPage
        
             $this->class = "\\App\\adms\\Controllers\\" . $this->urlController;
         } else {
-      
-            $_SESSION['msg'] = "Erro: Página não encontrada!<br>";
-            $urlDestiny = URLADM . "home/index";
+            
+            $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Página não encontrada!!</div>';
+            $urlDestiny = URLADM . "error/index";
             header("Location: $urlDestiny");
         }
     }
@@ -103,12 +106,12 @@ class LoadAdmPage
         return $this->slugController;
     }
 
-    private function slugMetodo($slugMetodo) {
-        $this->slugMetodo = $this->slugController($slugMetodo);
+    private function slugMethod($slugMethod) {
+        $this->slugMethod = $this->slugController($slugMethod);
         //Convert the first letter to lowercase
-        $this->slugMetodo = lcfirst($this->slugMetodo);
+        $this->slugMethod = lcfirst($this->slugMethod);
 
-        return $this->slugMetodo;
+        return $this->slugMethod;
     }
 } 
 ?>

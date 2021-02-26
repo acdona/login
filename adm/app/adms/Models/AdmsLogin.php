@@ -38,7 +38,7 @@ class AdmsLogin extends helper\AdmsConn
                               "username={$this->data['username']}&email={$this->data['username']}&limit=1");
                           
       
-        $this->databaseResult = $viewUser->getResult();
+        $this->databaseResult = $viewUser->getReadingResult();
        
         if($this->databaseResult){
             $this->validatePassword();
