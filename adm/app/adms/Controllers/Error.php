@@ -21,6 +21,8 @@ class Error
         
         $this->data = [];
         $viewError = new \App\adms\Models\AdmsError;
+        $viewError->view();
+        
         /** Load View Home */
         $loadView = new \Core\ConfigView("adms/Views/error/error", $this->data);
         $loadView->render();

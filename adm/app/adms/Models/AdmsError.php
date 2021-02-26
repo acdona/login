@@ -17,6 +17,9 @@ class AdmsError
     /** @var array $dataError Receives data that is returned from the database */
     private array $dataError;
 
+    /**
+     * @method view Responsible for loading error records from the database.
+     */
     public function view() {
         
         // $viewError = new \App\adms\Models\helper\AdmsRead();

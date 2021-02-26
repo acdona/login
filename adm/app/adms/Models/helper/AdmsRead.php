@@ -53,10 +53,10 @@ class AdmsRead extends AdmsConn
     }
 
     /**
-     * Recebe os valores para montar a QUERY.
-     * Converte a parseString de string para array.
-     * @param string $query Recebe a QUERY da Models
-     * @param string $parseString Recebe o valores que devem ser subtituidos no link, ex: adms_situation_id=1
+     * Receive the values to set up the QUERY.
+     * Convert the parseString from string to array.
+     * @param string $query Receive model QUERY.
+     * @param string $parseString Receive the valus that must be replaced on the link, ex: adms_situation_id=1
      * 
      * @return void
      */
@@ -65,11 +65,11 @@ class AdmsRead extends AdmsConn
         if (!empty($parseString)) {
             parse_str($parseString, $this->values);
         }
-        $this->exeIntruction();
+        $this->exeIntruction(); 
     }
 
     /**
-     * Executa a QUERY. 
+     * Run the QUERY. 
      * When you run the query successfully, it returns the data array, otherswise it returns null.
      * 
      * @return void

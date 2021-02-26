@@ -14,13 +14,17 @@ namespace App\adms\Controllers;
 class Login
 {
 
-    private $data;
-    private $dataForm;
+    private array $data;
+    private array $dataForm;
 
     public function access() {
-        
-        $this->dataForm = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        
+
+        if(!is_null(filter_input_array(INPUT_POST, FILTER_DEFAULT))){
+            $this->dataForm = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        } else {
+            $dataForm=[];
+        }
+
         if (!empty($this->dataForm['SendLogin'])) {
             $valLogin= new \App\adms\Models\AdmsLogin();
             $valLogin->login($this->dataForm);
@@ -33,8 +37,8 @@ class Login
                 $this->data['form'] = $this->dataForm;
             }            
         }
-
-        // $this->data = [];
+        
+        $this->data = [];
 
         $loadView = new \Core\ConfigView("adms/Views/login/access", $this->data);
         $loadView->render();

@@ -7,7 +7,7 @@ if (isset($this->data['form'])) {
 }
 ?>
 
-<form id="send_login" method="POST" action="" class="form-signin">
+<form id="send_login" method="POST" action="" class="form-signin" enctype="multipart/form-data">
     <div class="text-center mb-4">
         <img class="mb-4" src="<?php echo URLADM; ?>app/adms/assets/images/login/logo.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Área restrita</h1>
