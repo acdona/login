@@ -1,7 +1,5 @@
 <?php
-//Encrypt password
-//echo password_hash(123456, PASSWORD_DEFAULT);
-
+// If it exists, keep the data in the form
 if (isset($this->data['form'])) {
     $formValue = $this->data['form'];
 }
@@ -9,10 +7,12 @@ if (isset($this->data['form'])) {
 
 <form id="send_login" method="POST" action="" class="form-signin" enctype="multipart/form-data">
     <div class="text-center mb-4">
-        <img class="mb-4" src="<?php echo URLADM; ?>app/adms/assets/images/login/logo.png" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Área restrita</h1>
+        <img class="mb-4" src="<?php echo URLADM; ?>app/adms/assets/images/login/amacd-2021-novo-branco.png" alt="" width="100" height="100">
+        <h1 class="h3 mb-3 font-weight-normal text-light">Área restrita</h1>
     </div>
+
     <?php
+    //If it exists, print the warning message and destroy it
     if (isset($_SESSION['msg'])) {
         echo $_SESSION['msg'];
         unset($_SESSION['msg']);
@@ -24,6 +24,7 @@ if (isset($this->data['form'])) {
     <div class="form-label-group">
         <label for="username" class="sr-only">Usuário</label>
         <input name="username" type="text" id="username" class="form-control mb-4" placeholder="Digite o usuário" value="<?php
+        // If it exists, fill in the field with its value
         if (isset($valorForm['username'])) {
             echo $valorForm['username'];
         }

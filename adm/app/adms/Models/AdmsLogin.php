@@ -15,7 +15,7 @@ class AdmsLogin extends helper\AdmsConn
 {
 
     private array $data;
-    private $databaseResult;
+    private array $databaseResult;
     private bool $result = false;
     
     function getResult(): bool {

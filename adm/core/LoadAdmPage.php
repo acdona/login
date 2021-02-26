@@ -70,7 +70,8 @@ class LoadAdmPage
         
             $this->checkLogin();
         } else {
-            $_SESSION['msg'] = "Erro: Página não encontrada72!!<br>";
+            $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Página não encontrada!!</div>';
+            
             $urlDestiny = URLADM . "error/index";
             header("Location: $urlDestiny");
         }
