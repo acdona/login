@@ -40,7 +40,7 @@ class ConfigView
        public function render() {
            if(file_exists('app/' . $this->name . '.php')){
                include 'app/adms/Views/include/header_login.php';
-          //     include 'app/adms/Views/include/sidebar.php';
+               include 'app/adms/Views/include/sidebar.php';
                include 'app/' . $this->name . '.php';
                include 'app/adms/Views/include/footer_login.php';
           //     include 'app/adms/Views/include/libraries_js.php';

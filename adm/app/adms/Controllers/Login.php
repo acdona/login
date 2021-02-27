@@ -23,7 +23,7 @@ class Login
         if(!is_null(filter_input_array(INPUT_POST, FILTER_DEFAULT))){
             $this->formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         } else {
-            //$formData=[];
+            $formData=[];
         }
 
         if (!empty($this->formData['SendLogin'])) {

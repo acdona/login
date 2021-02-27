@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="<?php echo URLADM; ?>app/adms/assets/images/ico/favicon.ico">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo URLADM; ?>app/adms/assets/css/signin.css">
+        <link rel="stylesheet" href="<?php echo URLADM; ?>app/adms/assets/css/style_login.css">
+        <link rel="stylesheet" href="<?php echo URLADM; ?>app/adms/assets/css/style_adms.css">
         <title>Adm - AMACD</title>
     </head>
     <body class="text-center">

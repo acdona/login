@@ -39,7 +39,7 @@ class AdmsLogin extends helper\AdmsConn
                           
       
         $this->databaseResult = $viewUser->getReadingResult();
-       
+      
         if($this->databaseResult){
             $this->validatePassword();
             

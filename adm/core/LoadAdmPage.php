@@ -73,8 +73,8 @@ class LoadAdmPage
             $this->checkLogin();
         } else {
            
-            $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Página não encontrada!</div>';
-            
+            //$_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Página não encontradaAQUI!</div>';
+           // exit("Erro aqui1");
             $urlDestiny = URLADM . "error/index";
             header("Location: $urlDestiny");
         }
@@ -87,7 +87,7 @@ class LoadAdmPage
             $this->class = "\\App\\adms\\Controllers\\" . $this->urlController;
         } else {
             
-            $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Página não encontrada!!</div>';
+            $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Página não encontradaAQUI!!</div>';
             $urlDestiny = URLADM . "error/index";
             header("Location: $urlDestiny");
         }

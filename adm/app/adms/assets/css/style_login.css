@@ -14,6 +14,7 @@ body {
 }
 
 .form-signin {
+  color: #ffffff;
   width: 100%;
   max-width: 420px;
   padding: 15px;
@@ -23,13 +24,14 @@ body {
 
 .form-label-group {
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
 .form-label-group input,
 .form-label-group label {
-  height: 3.125rem;
+  height: 2.125rem;
   padding: .75rem;
+  margin-bottom: ;
 }
 
 .form-label-group label {
@@ -40,7 +42,7 @@ body {
   width: 100%;
   margin-bottom: 0; /* Override default `<label>` margin */
   line-height: 1.5;
-  color: #495057;
+  color: #ffffff;
   pointer-events: none;
   cursor: text; /* Match the input under the label */
   border: 1px solid transparent;
@@ -80,7 +82,7 @@ body {
 
 .form-label-group input:not(:placeholder-shown) {
   padding-top: 1.25rem;
-  padding-bottom: .25rem;
+  padding-bottom: 1rem;
 }
 
 .form-label-group input:not(:-moz-placeholder-shown) ~ label {
