@@ -32,8 +32,8 @@ if (isset($this->data['form'])) {
         <label for="username" class="sr-only">Usuário</label>
         <input name="username" type="text" id="username" class="form-control mb-4" placeholder="Digite o usuário" value="<?php
         // If it exists, fill in the field with its value
-        if (isset($valorForm['username'])) {
-            echo $valorForm['username'];
+        if (isset($valForm['username'])) {
+            echo $valForm['username'];
         }
         ?>" required autofocus>
     </div>

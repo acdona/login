@@ -36,7 +36,7 @@ class AdmsLogin extends helper\AdmsConn
    
         
         $viewUser = new \App\adms\Models\helper\AdmsRead();
-        $viewUser->fullRead("SELECT id, name, nickname, email, password, image 
+        $viewUser->fullRead("SELECT id, name, nickname, email, password, adms_sits_user_id, image 
                               FROM adms_users
                               WHERE username =:username OR email =:email
                               LIMIT :limit",
@@ -46,17 +46,18 @@ class AdmsLogin extends helper\AdmsConn
         $this->databaseResult = $viewUser->getReadingResult();
       
         if($this->databaseResult){
-            $this->validatePassword();
+            $this->valEmailPerm();
             
            
         }else{
             $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Usuário não encontrado</div>";
-            $this->resultado = false;
+            $this->result = false;
         }
           
     }
 
     private function valEmailPerm() {
+        
         if ($this->databaseResult[0]['adms_sits_user_id'] == 3) {
             $_SESSION['msg'] = "Erro: Necessário confirmar o e-mail, solicite novo e-mail <a href='" . URLADM . "new-conf-email/index'>clique aqui</a>!<br>";
             $this->result = false;

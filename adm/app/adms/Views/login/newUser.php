@@ -6,8 +6,8 @@
     }
 
 
-if (isset($this->dados['form'])) {
-    $valorForm = $this->dados['form'];
+if (isset($this->data['form'])) {
+    $valForm = $this->data['form'];
 }
 
 
@@ -32,8 +32,8 @@ if (isset($this->dados['form'])) {
                 <div class="form-label-group">
                     <label>Nome</label><br><br>
                     <input name="name" type="text" id="name" placeholder="Digite o nome completo" value="<?php
-                    if (isset($valorForm['name'])) {
-                        echo $valorForm['name'];
+                    if (isset($valForm['name'])) {
+                        echo $valForm['name'];
                     }
                     ?>" required autofocus>
                 </div>
@@ -41,8 +41,8 @@ if (isset($this->dados['form'])) {
                 <div class="form-label-group">
                     <label>E-mail</label><br><br>
                     <input name="email" type="text" id="email" placeholder="Digite o seu melhor e-mail" value="<?php
-                    if (isset($valorForm['email'])) {
-                        echo $valorForm['email'];
+                    if (isset($valForm['email'])) {
+                        echo $valForm['email'];
                     }
                     ?>">
                 </div>
