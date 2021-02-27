@@ -5,6 +5,9 @@
     //Clear the buffer and block any output to the browser.
     ob_start();
 
+    // Defines a security key for all pages of the project.
+    define('R4F5CC', true);
+
     //Loads the autoload.
     require './vendor/autoload.php';
 

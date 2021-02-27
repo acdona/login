@@ -1,6 +1,11 @@
 <?php
 namespace App\adms\Models\helper;
 
+if (!defined('R4F5CC')) { 
+    header("Location: /");
+    die("Erro: Página não encontrada!");
+}
+
 /**
  * AdmsValPassword Classe. Responsible for validating the password. 
  *

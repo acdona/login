@@ -1,6 +1,11 @@
 <?php
 namespace App\adms\Controllers;
 
+if (!defined('R4F5CC')) { 
+    header("Location: /");
+    die("Erro: Página não encontrada!");
+}
+
 /**
  * NewUser controller Responsible for registering new user.
  *
@@ -44,7 +49,7 @@ class NewUser
     
     private function viewNewUser() {
         $loadView = new \Core\ConfigView("adms/Views/login/newUser", $this->data);
-        $loadView->render();
+        $loadView->renderLogin();
     }
 
 

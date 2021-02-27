@@ -1,3 +1,10 @@
+<?php
+    if (!defined('R4F5CC')) { 
+        header("Location: /");
+        die("Erro: Página não encontrada!");
+    }
+?>
+
 <div class="content p-1">
     <div class="list-group-item">
         <div class="d-flex">

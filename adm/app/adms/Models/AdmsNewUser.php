@@ -1,6 +1,11 @@
 <?php
 namespace App\adms\Models;
 
+if (!defined('R4F5CC')) { 
+    header("Location: /");
+    die("Erro: Página não encontrada!");
+}
+
 /**
  * AdmsNewUser Model. Responsible for handling new user registration data.  
  *

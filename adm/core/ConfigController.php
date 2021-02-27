@@ -1,6 +1,11 @@
 <?php
 namespace Core;
 
+if (!defined('R4F5CC')) { 
+    header("Location: /");
+    die("Erro: Página não encontrada!");
+}
+
 /**
  * ConfigController responsible for receiving and handling the url. 
  *

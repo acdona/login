@@ -1,4 +1,11 @@
 <?php
+
+if (!defined('R4F5CC')) { 
+    header("Location: /");
+    die("Erro: Página não encontrada!");
+}
+
+
 // If it exists, keep the data in the form
 if (isset($this->data['form'])) {
     $formValue = $this->data['form'];

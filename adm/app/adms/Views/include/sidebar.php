@@ -1,3 +1,10 @@
+<?php
+    if (!defined('R4F5CC')) { 
+        header("Location: /");
+        die("Erro: Página não encontrada!");
+    }
+?>
+
 <nav class="sidebar">
     <ul class="list-unstyled">
         <li><a href="<?php echo URLADM; ?>dashboard/index"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
@@ -18,7 +25,7 @@
                 <li><a href="<?php echo URLADM; ?>list-conf-emails/index"><i class="fas fa-envelope"></i> Configuração de E-mail</a></li>
             </ul>
         </li>
-        
+        <li><a href="<?php echo URLADM; ?>list-colors/index"><i class="far fa-user"></i> Cores</a></li>
         <li><a href="<?php echo URLADM; ?>view-perfil/index"><i class="far fa-user"></i> Perfil</a></li>
         <li><a href="<?php echo URLADM; ?>sair/index"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
     </ul>

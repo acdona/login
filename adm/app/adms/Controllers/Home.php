@@ -1,6 +1,11 @@
 <?php
 namespace App\adms\Controllers;
 
+if (!defined('R4F5CC')) { 
+    header("Location: /");
+    die("Erro: Página não encontrada!");
+}
+
 /**
  *  Home Controller responsible for loading the homepage 
  *

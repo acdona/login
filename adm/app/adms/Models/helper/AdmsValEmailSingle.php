@@ -1,6 +1,11 @@
 <?php
 namespace App\adms\Models\helper;
 
+if (!defined('R4F5CC')) { 
+    header("Location: /");
+    die("Erro: Página não encontrada!");
+}
+
 /**
  * AdmsValEmailSingle Helper. Responsible for cheking if the email exists in the database.
  *

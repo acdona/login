@@ -1,6 +1,11 @@
 <?php
 namespace App\adms\Controllers;
 
+if (!defined('R4F5CC')) { 
+    header("Location: /");
+    die("Erro: Página não encontrada!");
+}
+
 /**
  * Login Controller Responsible for loggin user.
  *
@@ -42,7 +47,7 @@ class Login
         $this->data = [];
 
         $loadView = new \Core\ConfigView("adms/Views/login/access", $this->data);
-        $loadView->render();
+        $loadView->renderLogin();
     }
     
 

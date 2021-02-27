@@ -1,6 +1,11 @@
 <?php
 namespace Core;
 
+if (!defined('R4F5CC')) { 
+    header("Location: /");
+    die("Erro: Página não encontrada!");
+}
+
 /**
  * LoadAdmPage Responsible for checking whether the page is public or restricted.
  * 
@@ -66,7 +71,7 @@ class LoadAdmPage
     }
 
     private function restrictedPage() {
-        $this->restrictedPage = ["Dashboard"];
+        $this->restrictedPage = ["Dashboard", "ListColors"];
        
         if(in_array($this->urlController, $this->restrictedPage)) {
         
