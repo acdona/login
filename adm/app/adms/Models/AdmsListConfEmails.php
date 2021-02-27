@@ -1,22 +1,22 @@
 <?php
 namespace App\adms\Models;
 
-if (!defined('R4F5CC')) {
+if (!defined('R4F5CC')) { 
     header("Location: /");
     die("Erro: Página não encontrada!");
 }
 
 /**
- * AdmsListSitsUsers Model. Responsible for listing the user's situation.
+ * AdmsListConfEmails Model. Responsible for listing email confirmation. 
  *
  * @version 1.0
  *
  * @author Antonio Carlos Doná
  *
- * @access public
+ * @access public 
  *
 */
-class AdmsListSitsUsers
+class AdmsListConfEmails
 {
 
     private $databaseResult;
@@ -32,31 +32,32 @@ class AdmsListSitsUsers
     function getDatabaseResult() {
         return $this->databaseResult;
     }
-    
+
     function getResultPg() {
         return $this->resultPg;
     }
     
-    public function listSitsUsers($pag = null) {
-        
+    
+    public function listConfEmails($pag = null) {
+
         $this->pag = (int) $pag;
-        $pagination = new \App\adms\Models\helper\AdmsPagination(URLADM . 'list-sits-users/index');
+        $pagination = new \App\adms\Models\helper\AdmsPagination(URLADM . 'list-conf-emails/index');
         $pagination->condition($this->pag, $this->limitResult);
-        $pagination->pagination("SELECT COUNT(id) AS num_result FROM adms_sits_users");
+        $pagination->pagination("SELECT COUNT(id) AS num_result FROM adms_confs_emails");
         $this->resultPg = $pagination->getResult();
 
-        $listSitsUsers = new \App\adms\Models\helper\AdmsRead();
-        $listSitsUsers->fullRead("SELECT sit.id, sit.name, sit.adms_color_id,
-                cor.color
-                FROM adms_sits_users sit
-                LEFT JOIN adms_colors AS cor ON cor.id=sit.adms_color_id
+
+        $listConfEmails = new \App\adms\Models\helper\AdmsRead();
+        $listConfEmails->fullRead("SELECT id, title, name, email
+                FROM adms_confs_emails
+                ORDER BY id DESC
                 LIMIT :limit OFFSET :offset", "limit={$this->limitResult}&offset={$pagination->getOffset()}");
 
-        $this->databaseResult = $listSitsUsers->getReadingResult();
+        $this->databaseResult = $listConfEmails->getReadingResult();
         if ($this->databaseResult) {
             $this->result = true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Nenhum situação para usuário encontrado!</div>";
+            $_SESSION['msg'] = "Nenhum e-mail encontrado!<br>";
             $this->result = false;
         }
     }

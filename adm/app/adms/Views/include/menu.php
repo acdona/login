@@ -19,7 +19,7 @@
             <a href="#submenu4" data-toggle="collapse"><i class="fas fa-video"></i> Situação do usuário</a>
             <ul id="submenu4" class="list-unstyled collapse">
                 <li><a href="<?php echo URLADM; ?>list-sits-users/index"><i class="fab fa-youtube"></i> Lista Situação do usuário</a></li>
-                <li><a href="#"><i class="fab fa-vimeo-v"></i> Item 4.2</a></li>
+                <li><a href="<?php echo URLADM; ?>list-conf-emails/index"><i class="fab fa-vimeo-v"></i> Lista Conf Emails</a></li>
             </ul>
         </li>
 
