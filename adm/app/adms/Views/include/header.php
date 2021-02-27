@@ -37,7 +37,7 @@ if (!defined('R4F5CC')) {
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="<?php echo URLADM ?>view-perfil/index"><i class="fas fa-user"></i> Perfil</a>
-                    <a class="dropdown-item" href="<?php echo URLADM ?>sair/index"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                    <a class="dropdown-item" href="<?php echo URLADM ?>logout/index"><i class="fas fa-sign-out-alt"></i> Sair</a>
                 </div>
             </li>
         </ul>

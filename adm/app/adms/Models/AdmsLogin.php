@@ -55,6 +55,21 @@ class AdmsLogin extends helper\AdmsConn
         }
           
     }
+
+    private function valEmailPerm() {
+        if ($this->databaseResult[0]['adms_sits_user_id'] == 3) {
+            $_SESSION['msg'] = "Erro: Necessário confirmar o e-mail, solicite novo e-mail <a href='" . URLADM . "new-conf-email/index'>clique aqui</a>!<br>";
+            $this->result = false;
+        } elseif ($this->databaseResult[0]['adms_sits_user_id'] == 5) {
+            $_SESSION['msg'] = "Erro: E-mail descadastrado, entre em contato com a empresa!<br>";
+            $this->result = false;
+        } elseif ($this->databaseResult[0]['adms_sits_user_id'] == 2) {
+            $_SESSION['msg'] = "Erro: E-mail inativo, entre em contato com a empresa!<br>";
+            $this->result = false;
+        } else {
+            $this->validatePassword();
+        }
+    }
     
     private function validatePassword() {
   

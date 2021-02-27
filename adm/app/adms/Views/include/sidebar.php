@@ -27,6 +27,6 @@
         </li>
         <li><a href="<?php echo URLADM; ?>list-colors/index"><i class="far fa-user"></i> Cores</a></li>
         <li><a href="<?php echo URLADM; ?>view-perfil/index"><i class="far fa-user"></i> Perfil</a></li>
-        <li><a href="<?php echo URLADM; ?>sair/index"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+        <li><a href="<?php echo URLADM; ?>logout/index"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
     </ul>
 </nav>
