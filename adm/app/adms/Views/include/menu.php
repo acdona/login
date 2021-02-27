@@ -16,9 +16,9 @@
         <li><a href="<?php echo URLADM; ?>list-colors/index"><i class="fas fa-users"></i> Cores</a></li>
 
         <li>
-            <a href="#submenu4" data-toggle="collapse"><i class="fas fa-video"></i> Item 4</a>
+            <a href="#submenu4" data-toggle="collapse"><i class="fas fa-video"></i> Situação do usuário</a>
             <ul id="submenu4" class="list-unstyled collapse">
-                <li><a href="#"><i class="fab fa-youtube"></i> Item 4.1</a></li>
+                <li><a href="<?php echo URLADM; ?>list-sits-users/index"><i class="fab fa-youtube"></i> Lista Situação do usuário</a></li>
                 <li><a href="#"><i class="fab fa-vimeo-v"></i> Item 4.2</a></li>
             </ul>
         </li>
