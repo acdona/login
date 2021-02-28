@@ -1,0 +1,52 @@
+<?php
+namespace App\adms\Controllers;
+
+if (!defined('R4F5CC')) {
+    header("Location: /");
+    die("Erro: Página não encontrada!");
+}
+
+/**
+ * ViewSitsUser Controller. Responsible for viewing the user's situation.
+ *
+ * @version 1.0
+ *
+ * @author Antonio Carlos Doná
+ *
+ * @access public
+ *
+*/
+class ViewSitsUser
+{
+
+    
+    private int $id;
+    private $data;
+
+    public function index($id) {
+        $this->id = (int) $id;
+        if (!empty($this->id)) {
+            $viewSitsUser = new \App\adms\Models\AdmsViewSitsUser();
+            $viewSitsUser->viewSitsUser($this->id);
+            if ($viewSitsUser->getResult()) {
+                $this->data['viewSitsUser'] = $viewSitsUser->getDatabaseResult();
+                $this->viewSitsUser();
+            } else {
+                $urlDestiny = URLADM . "list-sits-users/index";
+                header("Location: $urlDestiny");
+            }
+        } else {
+            $_SESSION['msg'] = "Situação para usuário não encontrado<br>";
+            $urlDestiny = URLADM . "list-sits-users/index";
+            header("Location: $urlDestiny");
+        }
+    }
+    
+    private function viewSitsUser() {
+        $loadView = new \Core\ConfigView("adms/Views/sitsUser/viewSitsUser", $this->data);
+        $loadView->render();
+    }
+
+}
+
+?>
