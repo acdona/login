@@ -5,8 +5,6 @@ if(!defined('R4F5CC')){
 }
 ?>
 
-
-
 <div class="content p-1">
     <div class="list-group-item">
         <div class="d-flex">
@@ -43,7 +41,7 @@ if(!defined('R4F5CC')){
                         ?>
                         <tr>
                             <td class="text-center"><?php echo $id; ?></td>
-                            <td class="text-center"><?php echo $title; ?></td>
+                            <td><?php echo $title; ?></td>
                             <td class="d-none d-sm-table-cell"><?php echo $name; ?></td>
                             <td class="d-none d-sm-table-cell"><?php echo $email; ?></td>
                             
