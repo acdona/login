@@ -70,7 +70,7 @@ class LoadAdmPage
     }
 
     private function restrictedPage() {
-        $this->restrictedPage = ["Dashboard", "ListColors", "ListSitsUsers", "ListUsers", "ListConfEmails", "ViewUser", "ViewColor", "ViewSitsUser", "ViewConfEmail"];
+        $this->restrictedPage = ["Dashboard", "ListColors", "ListSitsUsers", "ListUsers", "ListConfEmails", "ViewUser", "ViewColor", "ViewSitsUser", "ViewConfEmail", "EditColor"];
        
         if(in_array($this->urlController, $this->restrictedPage)) {
         
