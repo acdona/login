@@ -12,7 +12,7 @@ if(!defined('R4F5CC')){
                 <h2 class="display-4 title">Listar E-mail</h2>
             </div>
             <div class="p-2">
-                <a href="<?php echo URLADM ?>add-conf-emails/index" class="btn btn-outline-success btn-sm">Cadastrar</a>
+                <a href="<?php echo URLADM ?>add-conf-email/index" class="btn btn-outline-success btn-sm">Cadastrar</a>
             </div>
         </div>
         <hr class="hr-title">
@@ -36,8 +36,8 @@ if(!defined('R4F5CC')){
                 <tbody>
                     <?php
                     
-                    foreach ($this->data['listConfEmails'] as $confEmails) {
-                        extract($confEmails);
+                    foreach ($this->data['listConfEmails'] as $confEmail) {
+                        extract($confEmail);
                         ?>
                         <tr>
                             <td class="text-center"><?php echo $id; ?></td>
@@ -47,18 +47,18 @@ if(!defined('R4F5CC')){
                             
                                 <td class="text-center">
                                 <span class="d-none d-lg-block">
-                                    <a href="<?php echo URLADM . 'view-conf-emails/index/$id' . $id; ?>" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                                    <a href="<?php echo URLADM . 'edit-conf-emails/index/$id' . $id; ?>" class="btn btn-outline-warning btn-sm">Editar</a>
-                                    <a href="<?php echo URLADM . 'delete-conf-emails/index/$id' . $id; ?>" class="btn btn-outline-danger btn-sm" data-confirm="Excluir">Apagar</a> 
+                                    <a href="<?php echo URLADM . 'view-conf-email/index/' . $id; ?>" class="btn btn-outline-primary btn-sm">Visualizar</a>
+                                    <a href="<?php echo URLADM . 'edit-conf-email/index/' . $id; ?>" class="btn btn-outline-warning btn-sm">Editar</a>
+                                    <a href="<?php echo URLADM . 'delete-conf-email/index/' . $id; ?>" class="btn btn-outline-danger btn-sm" data-confirm="Excluir">Apagar</a> 
                                 </span>
                                 <div class="dropdown d-block d-lg-none">
                                     <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Ações
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                        <a class="dropdown-item" href="<?php echo URLADM . 'view-conf-emails/index/$id' . $id; ?>">Visualizar</a>
-                                        <a class="dropdown-item" href="<?php echo URLADM . 'edit-conf-emails/index/$id' . $id; ?>">Editar</a>
-                                        <a class="dropdown-item" href="<?php echo URLADM . 'delete-conf-emails/index/$id' . $id; ?>" data-confirm="Excluir">Apagar</a>
+                                        <a class="dropdown-item" href="<?php echo URLADM . 'view-conf-email/index/' . $id; ?>">Visualizar</a>
+                                        <a class="dropdown-item" href="<?php echo URLADM . 'edit-conf-email/index/' . $id; ?>">Editar</a>
+                                        <a class="dropdown-item" href="<?php echo URLADM . 'delete-conf-email/index/' . $id; ?>" data-confirm="Excluir">Apagar</a>
                                     </div>
                                 </div>
                             </td>

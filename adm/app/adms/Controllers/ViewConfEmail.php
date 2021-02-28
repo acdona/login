@@ -1,0 +1,52 @@
+<?php
+namespace App\adms\Controllers;
+
+if (!defined('R4F5CC')) {
+    header("Location: /");
+    die("Erro: Página não encontrada!");
+}
+
+
+/**
+ * Classe ViewConfEmail responsável por 
+ *
+ * @version 1.0
+ *
+ * @author Antonio Carlos Doná
+ *
+ * @access public 
+ *
+*/
+class ViewConfEmail
+{
+
+    private int $id;
+    private $data;
+
+    public function index($id) {
+        $this->id = (int) $id;
+        if (!empty($this->id)) {
+            $viewConfEmail = new \App\adms\Models\AdmsViewConfEmail();
+            $viewConfEmail->viewConfEmail($this->id);
+            if ($viewConfEmail->getResult()) {
+                $this->data['viewConfEmail'] = $viewConfEmail->getDatabaseResult();
+                $this->viewConfEmail();
+            } else {
+                $urlDestiny = URLADM . "list-conf-email/index";
+                header("Location: $urlDestiny");
+            }
+        } else {
+            $_SESSION['msg'] = "E-mail não encontrado<br>";
+            $urlDestiny = URLADM . "list-conf-email/index";
+            header("Location: $urlDestiny");
+        }
+    }
+    
+    private function viewConfEmail() {
+        $loadView = new \Core\ConfigView("adms/Views/confEmails/viewConfEmail", $this->data);
+        $loadView->render();
+    }
+
+}
+
+?>
