@@ -20,7 +20,7 @@ class LoadAdmPage
     private string $class;
     private array $publicPage;
     private array $restrictedPage;
-     
+  
     public function loadPage($urlController = null, $urlMethod = null, $urlParameter = null){
         $this->urlController = $urlController;
         $this->urlMethod = $urlMethod;
@@ -43,7 +43,6 @@ class LoadAdmPage
     private function loadMethod() {
 
         $loadClass = new $this->class();
-
 
         if(method_exists($loadClass, $this->urlMethod)){
             
@@ -78,22 +77,22 @@ class LoadAdmPage
             $this->checkLogin();
         } else {
            
-            //$_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Página não encontradaAQUI!</div>';
-           // exit("Erro aqui1");
-            $urlDestiny = URLADM . "error/index";
+            $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Página não encontradaAQUI!</div>';
+            
+            $urlDestiny = URLADM . "login/index";
             header("Location: $urlDestiny");
         }
     }
 
     private function checkLogin() {
-        
+  
         if(isset($_SESSION['user_id']) AND isset($_SESSION['user_name']) AND isset($_SESSION['user_email'])) {
        
             $this->class = "\\App\\adms\\Controllers\\" . $this->urlController;
         } else {
             
-            $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Página não encontradaAQUI!!</div>';
-            $urlDestiny = URLADM . "error/index";
+            $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Para acessar a página realize o login!</div>';
+            $urlDestiny = URLADM . "login/index";
             header("Location: $urlDestiny");
         }
     }

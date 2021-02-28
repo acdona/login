@@ -30,7 +30,7 @@ class NewConfEmail
             $newConfEmail= new \App\adms\Models\AdmsNewConfEmail();
             $newConfEmail->newConfEmail($this->formData);
             if($newConfEmail->getResult()){
-                $urlDestiny = URLADM . "login/access";
+                $urlDestiny = URLADM . "login/index";
                 header("Location: $urlDestiny");
             }else{
                 $this->data['form'] = $this->formData;

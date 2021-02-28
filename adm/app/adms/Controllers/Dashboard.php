@@ -20,6 +20,7 @@ class Dashboard
 {
 
     public function index() {
+      
         $loadView= new \Core\ConfigView("adms/Views/dashboard/home");
         $loadView->render();
     }

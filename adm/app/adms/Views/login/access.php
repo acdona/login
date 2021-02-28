@@ -1,10 +1,8 @@
 <?php
-
 if (!defined('R4F5CC')) { 
     header("Location: /");
     die("Erro: Página não encontrada!");
 }
-
 
 // If it exists, keep the data in the form
 if (isset($this->data['form'])) {
@@ -12,12 +10,11 @@ if (isset($this->data['form'])) {
 }
 ?>
 
-<form id="send_login" method="POST" action="" class="form-signin" enctype="multipart/form-data">
+<form id="send_login" method="POST" action="" class="form-signin">
     <div class="text-center mb-4">
         <img class="mb-4" src="<?php echo URLADM; ?>app/adms/assets/images/login/amacd-2021-novo-branco.png" alt="" width="100" height="100">
         <h1 class="h3 mb-3 font-weight-normal text-light">Área restrita</h1>
     </div>
-
     <?php
     //If it exists, print the warning message and destroy it
     if (isset($_SESSION['msg'])) {
@@ -29,16 +26,16 @@ if (isset($this->data['form'])) {
     <span class="msg"></span>
 
     <div class="form-label-group">
-        <label for="username" class="sr-only">Usuário</label>
+        <label for="username">Usuário</label>
         <input name="username" type="text" id="username" class="form-control mb-4" placeholder="Digite o usuário" value="<?php
         // If it exists, fill in the field with its value
-        if (isset($valForm['username'])) {
-            echo $valForm['username'];
+        if (isset($formValue['username'])) {
+            echo $formValue['username'];
         }
         ?>" required autofocus>
     </div>
     <div class="form-label-group">
-        <label for="password" class="sr-only">Senha</label>
+        <label for="password">Senha</label>
         <input name="password" type="password" id="password" class="form-control" placeholder="Digite a senha" required>
     </div>
 

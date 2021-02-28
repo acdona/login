@@ -20,7 +20,7 @@ class AdmsLogin extends helper\AdmsConn
 {
 
     private array $data;
-    private array $databaseResult;
+    private $databaseResult;
     private bool $result = false;
     
     function getResult(): bool {
@@ -33,8 +33,7 @@ class AdmsLogin extends helper\AdmsConn
 
     public function login(array $data=null) {
         $this->data = $data;
-   
-        
+             
         $viewUser = new \App\adms\Models\helper\AdmsRead();
         $viewUser->fullRead("SELECT id, name, nickname, email, password, adms_sits_user_id, image 
                               FROM adms_users
@@ -57,7 +56,7 @@ class AdmsLogin extends helper\AdmsConn
     }
 
     private function valEmailPerm() {
-        
+       
         if ($this->databaseResult[0]['adms_sits_user_id'] == 3) {
             $_SESSION['msg'] = "Erro: Necessário confirmar o e-mail, solicite novo e-mail <a href='" . URLADM . "new-conf-email/index'>clique aqui</a>!<br>";
             $this->result = false;
@@ -73,7 +72,7 @@ class AdmsLogin extends helper\AdmsConn
     }
     
     private function validatePassword() {
-  
+
         if(password_verify($this->data['password'], $this->databaseResult[0]['password'])){
             
             $_SESSION['user_id'] = $this->databaseResult[0]['id'];
@@ -81,7 +80,7 @@ class AdmsLogin extends helper\AdmsConn
             $_SESSION['user_email'] = $this->databaseResult[0]['email'];
             $_SESSION['user_nickname'] = $this->databaseResult[0]['nickname'];
             $_SESSION['user_image'] = $this->databaseResult[0]['image'];
-         
+          
             $this->result = true;
         }else{
             $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Usuário ou senha incorreta!</div>';

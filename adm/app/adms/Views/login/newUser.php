@@ -53,8 +53,8 @@ if (isset($this->data['form'])) {
                     <span id="msgViewStrength"></span>
                 </div>
 
-                <input name="SendNewUser" type="submit" class="btn btn-outline-success value="Cadastrar">  
-                <p><a href="<?php echo URLADM; ?>login/access" color-white>Clique aqui</a> para acessar</p>
+                <input name="SendNewUser" type="submit" class="btn btn-outline-success" value="Cadastrar">  
+                <p><a href="<?php echo URLADM; ?>login/index" color-white>Clique aqui</a> para acessar</p>
             </form>
 
             

@@ -23,10 +23,10 @@ $(document).ready(function(){
  $(document).ready(function(){
     $('#send_login').on("submit", function(){      
        if($('#username').val() === ""){
-           $(".msg").html('<p>Erro: Necessário preencher o campo usuário!</p>');
+           $(".msg").html("<div class='alert-danger' role='alert'>Erro: Necessário preencher o campo usuário!</div>");
            return false;
        } else if($('#password').val() === ""){
-           $(".msg").html('<p>Erro: Necessário preencher o campo senha!</p>');
+           $(".msg").html("<div class='alert-danger' role='alert'>Erro: Necessário preencher o campo senha!</div>");
            return false;
        }
     });

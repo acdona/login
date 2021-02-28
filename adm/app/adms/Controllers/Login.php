@@ -19,34 +19,35 @@ if (!defined('R4F5CC')) {
 class Login
 {
     /** @var array $data Receives the data that must be sent to VIEW. */
-    private array $data;
+    private $data;
     /** @var array $formData Receives the data send by the form. */
-    private array $formData;
+    private $formData;
 
-    public function access() {
-
-        if(!is_null(filter_input_array(INPUT_POST, FILTER_DEFAULT))){
-            $this->formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        } else {
-            $formData=[];
-        }
+    public function index() {
+    
+        
+            $this->formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);  
+        
 
         if (!empty($this->formData['SendLogin'])) {
+            
             $valLogin= new \App\adms\Models\AdmsLogin();
             $valLogin->login($this->formData);
-            if($valLogin->getResult()){
-                
+            
+            if($valLogin->getResult()) {        
+              
                 $urlDestiny = URLADM . "dashboard/index";
                 header("Location: $urlDestiny");
-                
+
             }else{
                 $this->data['form'] = $this->formData;
             }            
         }
         
-        $this->data = [];
+       //$this->data = [];
 
         $loadView = new \Core\ConfigView("adms/Views/login/access", $this->data);
+        
         $loadView->renderLogin();
     }
     

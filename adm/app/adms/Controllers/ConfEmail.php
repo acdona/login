@@ -29,7 +29,7 @@ class ConfEmail
             $this->validateKey();
         }else {
             $_SESSION['msg'] = "Erro: Link inválido!<br>";
-            $urlDestiny = URLADM . "login/access";
+            $urlDestiny = URLADM . "login/index";
             header("Location: $urlDestiny");
         }
     }
@@ -39,10 +39,10 @@ class ConfEmail
         $confEmail = new \App\adms\Models\AdmsConfEmail();
         $confEmail->confEmail($this->key);
         if($confEmail->getResult()) {
-            $urlDestiny = URLADM . "login/access";
+            $urlDestiny = URLADM . "login/index";
             header("Location: $urlDestiny");
         } else {
-            $urlDestiny = URLADM . "login/access";
+            $urlDestiny = URLADM . "login/index";
             header("Location: $urlDestiny");
         }
 

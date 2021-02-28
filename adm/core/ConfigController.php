@@ -46,8 +46,6 @@ class ConfigController extends Config
     /** @var array $format Receives the array of special characters that must be replaced.  */
     private array $format;
 
-    private $class;
-
     /**  Executes when it is instantiated. */
     public function __construct() {
         
@@ -145,7 +143,7 @@ class ConfigController extends Config
      */
     public function load(): void {
        
-        $loadAdmPage = new \Core\loadAdmPage();
+        $loadAdmPage = new \Core\LoadAdmPage();
         $loadAdmPage->loadPage($this->urlController, $this->urlMethod, $this->urlParameter); 
           
         

@@ -19,7 +19,7 @@ if (!defined('R4F5CC')) {
 class ConfigView
 {
 
-       /** @var string $noma Receives the VIEW address that should be loaded */
+       /** @var string $name Receives the VIEW address that should be loaded */
        private string $name;
        /** @var array $data Receive data to send VIEW */
        private $data;
@@ -29,7 +29,7 @@ class ConfigView
         * @param string $name View addres that should be loaded
         * @param array $data Data that VIEW should receive.
         */
-       public function __construct($name, $data = null)
+       public function __construct($name, array $data = null)
        {
            $this->name = $name; 
            $this->data = $data;

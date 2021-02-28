@@ -36,7 +36,7 @@ class NewUser
             $createNewUser = new \App\adms\Models\AdmsNewUser();
             $createNewUser->create($this->formData);
             if($createNewUser->getResult()){
-                $urlDestiny = URLADM . "login/access";
+                $urlDestiny = URLADM . "login/index";
                 header("Location: $urlDestiny");
             }else{
                 $this->data['form'] = $this->formData;
