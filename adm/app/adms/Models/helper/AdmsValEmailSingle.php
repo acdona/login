@@ -40,7 +40,7 @@ class AdmsValEmailSingle
            
             $valEmailSingle->fullRead("SELECT id
                     FROM adms_users
-                    WHERE (email =:email) AND id <>:id 
+                    WHERE (email =:email OR username =:username) AND id <>:id 
                     LIMIT :limit", "email={$this->email}&username={$this->email}&id={$this->id}&limit=1");
                     
                     

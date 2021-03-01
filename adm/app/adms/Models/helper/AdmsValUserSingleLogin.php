@@ -67,7 +67,7 @@ class AdmsValUserSingleLogin
             $this->result = true;
         } else {
             
-            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Este e-mail já está cadastrado!</div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Este usuário já está cadastrado!</div>";
             $this->result = false;
         }
     }

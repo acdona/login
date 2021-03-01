@@ -13,7 +13,7 @@ if (!defined('R4F5CC')) {
                     <h2 class="display-4 title">Listagem - Usuários</h2>
                 </div>
                 <div class="p-2">
-                    <a href="<?php echo URLADM; ?>add-users/index" class="btn btn-outline-success btn-sm">Cadastrar</a>
+                    <a href="<?php echo URLADM; ?>add-user/index" class="btn btn-outline-success btn-sm">Cadastrar</a>
                 </div>
             </div>
             <hr class="hr-title">

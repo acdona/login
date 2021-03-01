@@ -77,6 +77,7 @@ class AdmsEditUser
         $valUserSingle = new \App\adms\Models\helper\AdmsValUserSingleLogin();
         $valUserSingle->validateUserSingleLogin($this->data['username'], true, $this->data['id']);
 
+      
         if ($valEmail->getResult() AND $valEmailSingle->getResult() AND $valUserSingle->getResult()) {
             $this->edit();
         } else {
