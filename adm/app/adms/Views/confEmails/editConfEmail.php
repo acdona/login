@@ -108,8 +108,10 @@ if (isset($formData['id'])) {
             if (isset($formData['port'])) {
                 echo $formData['port'];
             }
-            ?>"
-            <p><span class="text-danger">*</span> Campo Obrigatório</p>
+            ?>">
+            <p>
+                <span class="text-danger">*</span> Campo Obrigatório
+            </p>
 
             <input class="btn btn-outline-warning btn-sm" name="EditConfEmail" type="submit" value="Salvar">  
         </form>
