@@ -45,10 +45,11 @@ class AdmsAddConfEmail
         $createConfEmail->exeCreate("adms_confs_emails", $this->data);
 
         if ($createConfEmail->getCreateResult()) {
-            $_SESSION['msg'] = "E-mail cadastrado com sucesso!";
+            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>E-mail cadastrado com sucesso!</div>";
+            
             $this->result = true;
         } else {
-            $_SESSION['msg'] = "Erro: E-mail não cadastrado com sucesso. Tente mais tarde!";
+            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>E-mail não cadastrado!</div>";
             $this->result = false;
         }
     }

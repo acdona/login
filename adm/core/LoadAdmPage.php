@@ -70,14 +70,14 @@ class LoadAdmPage
     }
 
     private function restrictedPage() {
-        $this->restrictedPage = ["Dashboard", "ListColors", "ListSitsUsers", "ListUsers", "ListConfEmails", "ViewUser", "ViewColor", "ViewSitsUser", "ViewConfEmail", "EditColor", "EditConfEmail", "EditSitsUser", "EditUser", "AddColor", "AddSitsUser", "AddUser", "AddConfEmail", "EditUserPassword", "EditUserImage"];
+        $this->restrictedPage = ["Dashboard", "ListColors", "ListSitsUsers", "ListUsers", "ListConfEmails", "ViewUser", "ViewColor", "ViewSitsUser", "ViewConfEmail", "EditColor", "EditConfEmail", "EditSitsUser", "EditUser", "AddColor", "AddSitsUser", "AddUser", "AddConfEmail", "EditUserPassword", "EditUserImage", "DeleteUser", "DeleteColor", "DeleteConfEmail", "DeleteSitsUser"];
        
         if(in_array($this->urlController, $this->restrictedPage)) {
         
             $this->checkLogin();
         } else {
            
-            $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Página não encontradaAQUI!</div>';
+            $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Página não encontrada!</div>';
             
             $urlDestiny = URLADM . "login/index";
             header("Location: $urlDestiny");
