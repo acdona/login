@@ -27,6 +27,7 @@ if (isset($this->data['form'])) {
         }
         ?>
         <form id="sits_user" method="POST" action="">
+        
             <div class="form-group">
                 <label for="name"><span class="text-danger">*</span> Nome:</label>
                 <input name="name" type="text" class="form-control" id="name" placeholder="Nome da situação para usuário"  value="<?php
