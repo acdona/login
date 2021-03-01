@@ -40,7 +40,7 @@
         <li><a href="#">Item 6</a></li>
         <li><a href="#">Item 7</a></li>
         <li><a href="#">Item 8</a></li>
-        <li><a href="<?php echo URLADM; ?>view-perfil/index"><i class="far fa-user"></i> Perfil</a></li>
+        <li><a href="<?php echo URLADM; ?>view-profile/index"><i class="far fa-user"></i> Perfil</a></li>
         <li><a href="<?php echo URLADM; ?>logout/index"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
     </ul>
 </nav>
