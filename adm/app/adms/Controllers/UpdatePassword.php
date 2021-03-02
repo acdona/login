@@ -61,7 +61,7 @@ class UpdatePassword
             }
 
         }else {
-            $_SESSION['msg'] = "Erro: Link inválido, solicite novo link <a href='" . URLADM . "recover-password/index'>clique aqui</a>!<br>";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Link inválido, solicite novo link <a href='" . URLADM . "recover-password/index'>clique aqui</a>!</div>";
             $urlDestiny = URLADM . "login/index";
             header("Location: $urlDestiny");
         }

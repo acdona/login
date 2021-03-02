@@ -86,7 +86,7 @@ class AdmsUpdatePassword
         $upPassword = new \App\adms\Models\helper\AdmsUpdate();
         $upPassword->exeUpdate("adms_users", $this->saveData, "WHERE id=:id", "id={$this->databaseResult[0]['id']}");
         if($upPassword->getResult()){
-            $_SESSION['msg'] = "Senha atualizada com sucesso!<br>";
+            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Senha atualizada com sucesso!</div>";
             $this->result = true;
         }else{
             $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Senha não atualizada, tente novamente!<br></div>";

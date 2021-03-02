@@ -30,11 +30,11 @@ class AdmsValPassword
         $this->password = (string) $password;
 
         if (stristr($this->password, "'")) {
-            $_SESSION['msg'] = "Erro: Caracter ( ' ) utilizado na senha inválido!";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Caracter ( ' ) utilizado na senha inválido!</div>";
             $this->result = false;
         } else {
             if (stristr($this->password, " ")) {
-                $_SESSION['msg'] = "Erro: Proibido utilizar espaço em branco no campo senha!";
+                $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Proibido utilizar espaço em branco no campo senha!</div>";
                 $this->result = false;
             } else {
                 $this->valExtensPassword();
@@ -44,7 +44,7 @@ class AdmsValPassword
 
     private function valExtensPassword() {
         if ((strlen($this->password) < 6)) {
-            $_SESSION['msg'] = "Erro: A senha deve ter no mínimo 6 caracteres!";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: A senha deve ter no mínimo 6 caracteres!</div>";
             $this->result = false;
         } else {
             $this->valValuePassword();
@@ -55,7 +55,7 @@ class AdmsValPassword
         if (preg_match('/^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9]{6,}$/', $this->password)) {
             $this->result = true;
         } else {
-            $_SESSION['msg'] = "Erro: A senha deve ter letras e números!";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: A senha deve ter letras e números!</div>";
             $this->result = false;
         }
     }
