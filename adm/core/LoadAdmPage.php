@@ -58,7 +58,7 @@ class LoadAdmPage
     }
 
     private function publicPage() {
-        $this->publicPage = ["Login", "Error", "Home", "Logout", "NewUser", "ConfEmail", "NewConfEmail"];
+        $this->publicPage = ["Login", "Error", "Home", "Logout", "NewUser", "ConfEmail", "NewConfEmail", "RecoverPassword", "UpdatePassword"];
 
         if(in_array($this->urlController, $this->publicPage)) {
             $this->class = "\\App\adms\\Controllers\\" . $this->urlController;

@@ -12,8 +12,8 @@ if (isset($this->data['form'])) {
 
 <form id="send_login" method="POST" action="" class="form-signin">
     <div class="text-center mb-4">
-        <img class="mb-4" src="<?php echo URLADM; ?>app/adms/assets/images/login/amacd-2021-novo-branco.png" alt="" width="100" height="100">
-        <h1 class="h3 mb-3 font-weight-normal text-light">Área restrita</h1>
+        <img class="mb-4" src="<?php echo URLADM; ?>app/adms/assets/images/login/amacd-2021-novo-branco.png" alt="" width="72" height="72">
+        <h3 class="h4 mb-4 font-weight-normal text-light">Área restrita</h3>
     </div>
     <?php
     //If it exists, print the warning message and destroy it
@@ -26,8 +26,8 @@ if (isset($this->data['form'])) {
     <span class="msg"></span>
 
     <div class="form-label-group">
-        <label for="username">Usuário</label>
-        <input name="username" type="text" id="username" class="form-control mb-4" placeholder="Digite o usuário" value="<?php
+        <label for="username">Usuário</label><br><br>
+        <input name="username" type="text" id="username" class="form-control mb-2" placeholder="Digite o usuário" value="<?php
         // If it exists, fill in the field with its value
         if (isset($formValue['username'])) {
             echo $formValue['username'];
@@ -35,8 +35,8 @@ if (isset($this->data['form'])) {
         ?>" required autofocus>
     </div>
     <div class="form-label-group">
-        <label for="password">Senha</label>
-        <input name="password" type="password" id="password" class="form-control" placeholder="Digite a senha" required>
+        <label for="password">Senha</label><br><br>
+        <input name="password" type="password" id="password" class="form-control mb-2" placeholder="Digite a senha" required><br>
     </div>
 
     <input name="SendLogin" type="submit" value="Acessar" class="btn btn-lg btn-primary btn-block">
