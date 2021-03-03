@@ -11,7 +11,7 @@ if (!defined('R4F5CC')) {
                 <h2 class="display-4 title">Detalhes do Usuário</h2>
             </div>
             <?php
-               
+  
                 if (!empty($this->data['viewUser'])) {
                     extract($this->data['viewUser'][0]);
             ?>

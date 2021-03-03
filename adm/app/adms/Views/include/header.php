@@ -17,7 +17,7 @@ if (!defined('R4F5CC')) {
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle menu-header" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?php
-                        if (((isset($_SESSION['user_image'])) AND (!empty($_SESSION['user_image']))) AND (file_exists("app/adms/assets/image/users/" . $_SESSION['user_id'] . "/" . $_SESSION['user_image']))) {
+                        if (((isset($_SESSION['user_image'])) AND (!empty($_SESSION['user_image']))) AND (file_exists("app/adms/assets/images/users/" . $_SESSION['user_id'] . "/" . $_SESSION['user_image']))) {
                             echo "<img src='" . URLADM . "app/adms/assets/images/users/" . $_SESSION['user_id'] . "/" . $_SESSION['user_image'] . "' class='rounded-circle img-user'>";
                         } else {
                             echo "<img src='" . URLADM . "app/adms/assets/images/users/icon_user.png' class='rounded-circle img-user'>";
@@ -30,10 +30,7 @@ if (!defined('R4F5CC')) {
                         }else{
                             echo "Usuário";
                         }
-                        
-                        
-                        ?>
-                    </span>
+                        ?></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="<?php echo URLADM ?>view-profile/index"><i class="fas fa-user"></i> Perfil</a>

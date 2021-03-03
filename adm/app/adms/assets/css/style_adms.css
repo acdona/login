@@ -12,11 +12,10 @@ body {
 
 /* Define largura e altura da imagem do usuário 
 ----------------------------------------------*/
-.img-user, .img-perfil {
-  width: 30px;
-  height: 30px;
+.img-user {
+  width: 50px;
+  height: 50px;
 }
-
 /* Define cor, largura máxima, largura mínima
    altura mínima e transição do menu
 ---------------------------------------------*/
@@ -26,6 +25,15 @@ body {
   max-width: 250px;
   min-height: calc(100vh - 62px);
   transition: all 0.3s;
+}
+
+
+
+/* Determina o tamanho da imagem do usuário em Visualizar
+--------------------------------------------------------*/
+.view-img-size {
+  width: 150px; 
+  height:150px;
 }
 
 /* Define os itens do menu para ocuparem todo o espaço 
@@ -130,20 +138,14 @@ body {
   margin-top: 0rem !important;
 }
 
-/* Determina o tamanho da imagem do usuário em Visualizar
---------------------------------------------------------*/
-.view-img-size {
-  width: 150px;
-  height: 150px;
-}
-
-.img-perfil{
+.img-edit{
   position: relative;
   display: inline-block;
 }
-.img-perfil:hover .edit{
+.img-edit:hover .edit{
   display: block;
 }
+
 .edit{
   padding-top: 7px;
   padding-right: 7px;
@@ -152,6 +154,7 @@ body {
   top: 0;
   display: none;
 }
+
 .prev-img{
   width: 250px;
   height: 141px;
@@ -166,3 +169,5 @@ body {
   cursor: pointer;
   float: right;
 }
+
+

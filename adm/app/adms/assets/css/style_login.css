@@ -29,9 +29,8 @@ body {
 
 .form-label-group input,
 .form-label-group label {
-  height: 2.125rem;
+  height: 3.125rem;
   padding: .75rem;
-  margin-bottom: ;
 }
 
 .form-label-group label {
@@ -42,7 +41,7 @@ body {
   width: 100%;
   margin-bottom: 0; /* Override default `<label>` margin */
   line-height: 1.5;
-  color: #ffffff;
+  color: #495057;
   pointer-events: none;
   cursor: text; /* Match the input under the label */
   border: 1px solid transparent;
