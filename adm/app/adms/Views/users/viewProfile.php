@@ -18,6 +18,7 @@ if (!defined('R4F5CC')) {
                     <span class="d-none d-lg-block">
                         <a href="<?php echo URLADM . 'edit-profile/index'; ?>" class="btn btn-outline-warning btn-sm">Editar</a>
                         <a href="<?php echo URLADM . 'edit-profile-password/index'; ?>" class="btn btn-outline-warning btn-sm">Editar Senha</a>
+                        <a href="<?php echo URLADM . 'edit-profile-image/index'; ?>" class="btn btn-outline-warning btn-sm">Editar Imagem</a>
                     </span>
                     <div class="dropdown d-block d-lg-none">
                         <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,6 +27,7 @@ if (!defined('R4F5CC')) {
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
                             <a class="dropdown-item" href="<?php echo URLADM . 'edit-profile/index'; ?>">Editar</a>
                             <a class="dropdown-item" href="<?php echo URLADM . 'edit-profile-password/index'; ?>">Editar Senha</a>
+                            <a class="dropdown-item" href="<?php echo URLADM . 'edit-profile-image/index'; ?>">Editar Imagem</a>
                         </div>
                     </div>
                 </div>

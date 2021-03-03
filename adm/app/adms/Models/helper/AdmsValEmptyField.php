@@ -33,7 +33,7 @@ class AdmsValEmptyField
 
         
         if (in_array('', $this->data)) {
-            $_SESSION['msg'] = "Erro: Necessário preencher todos os campos";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Necessário preencher todos os campos!</div>";
             $this->result = false;
         } else {
             $this->result = true;
