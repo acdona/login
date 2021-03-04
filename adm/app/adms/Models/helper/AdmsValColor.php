@@ -49,7 +49,7 @@ class AdmsValColor
             
         }
 
-        $this->resultadoBd = $valColor->getReadingResult();
+        $this->databaseResult = $valColor->getReadingResult();
 
         if (!$this->databaseResult) {
             $this->result = true;

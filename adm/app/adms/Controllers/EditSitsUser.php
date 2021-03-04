@@ -18,7 +18,7 @@ if (!defined('R4F5CC')) {
 */
 class EditSitsUser
 {
-    private $ata;
+    private $data;
     private $formData;
     private $id;
 
