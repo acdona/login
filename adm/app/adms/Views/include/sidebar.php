@@ -23,6 +23,7 @@
             <ul id="submenu5" class="list-unstyled collapse">
                 <li><a href="<?php echo URLADM; ?>list-colors/index"><i class="fas fa-palette"></i> Cores</a></li>
                 <li><a href="<?php echo URLADM; ?>list-conf-emails/index"><i class="fas fa-envelope"></i> Configuração de E-mail</a></li>
+                <li class="<?php if($sidebar_active == "view-form-level"){ echo 'active'; } ?>"><a href="<?php echo URLADM; ?>view-form-level/index"><i class="fas fa-user-cog"></i> Formulário Usuário</a></li>
             </ul>
         </li>
         <li><a href="<?php echo URLADM; ?>list-colors/index"><i class="far fa-user"></i> Cores</a></li>

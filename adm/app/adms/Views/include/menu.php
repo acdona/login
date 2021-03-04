@@ -4,9 +4,12 @@
     header("Location: /");
     die("Erro: Página não encontrada!");
 }
- 
-?>
 
+$sidebar_active = "";
+if(isset($this->dados['sidebarActive'])){
+    $sidebar_active = $this->dados['sidebarActive'];
+}
+?>
 
 <div class="d-flex">
 <nav class="sidebar">
@@ -21,6 +24,8 @@
                 <li><a href="<?php echo URLADM; ?>list-sits-users/index"><i class="fab fa-youtube"></i> Lista Situação do usuário</a></li>
                 <li><a href="<?php echo URLADM; ?>list-conf-emails/index"><i class="fab fa-vimeo-v"></i> Lista Conf Emails</a></li>
                 <li><a href="<?php echo URLADM; ?>list-access-levels/index"><i class="fab fa-vimeo-v"></i> Lista Nível Acesso</a></li>
+                <li><a href="<?php echo URLADM; ?>view-form-level/index"><i class="fab fa-vimeo-v"></i> Formulário do usuário</a></li>
+                
             </ul>
         </li>
 

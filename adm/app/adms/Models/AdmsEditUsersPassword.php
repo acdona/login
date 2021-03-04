@@ -36,16 +36,19 @@ class AdmsEditUsersPassword
     public function viewUser($id) {
         $this->id = (int) $id;
         $viewUser = new \App\adms\Models\helper\AdmsRead();
-        $viewUser->fullRead("SELECT id 
-                FROM adms_users
-                WHERE id=:id
-                LIMIT :limit", "id={$this->id}&limit=1");
+        $viewUser->fullRead("SELECT usu.id 
+
+                FROM adms_users usu
+                INNER JOIN adms_access_levels As lev ON lev.id=usu.adms_access_level_id
+                WHERE usu.id=:id AND lev.order_levels >:order_levels
+                LIMIT :limit", "id={$this->id}&order_levels=".$_SESSION['order_levels']."&limit=1");
 
         $this->databaseResult = $viewUser->getReadingResult();
         if ($this->databaseResult) {
             $this->result = true;
         } else {
-            $_SESSION['msg'] = "Usuário não encontrado!<br>";
+            
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Usuário não encontrado!</div>";
             $this->result = false;
         }
     }

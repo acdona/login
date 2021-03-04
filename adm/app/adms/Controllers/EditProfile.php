@@ -59,7 +59,8 @@ class EditProfile
                 $this->viewEditProfile();
             }
         }else{
-            $_SESSION['msg'] = "Erro: Usuário não encontrado!<br>";
+            
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Usuário não encontrado!</div>";
             $urlDestiny = URLADM . "login/index";
                 header("Location: $urlDestiny");
         }

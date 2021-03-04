@@ -49,7 +49,8 @@ class AdmsEditConfEmail
             
             $this->result = true;
         }else{
-            $_SESSION['msg'] = "Erro: E-mail não encontrado!<br>";
+            
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: E-mail não encontrado!</div>";
             $this->result = false;
         }    
     }

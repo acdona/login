@@ -35,9 +35,10 @@ class AdmsLogin extends helper\AdmsConn
         $this->data = $data;
              
         $viewUser = new \App\adms\Models\helper\AdmsRead();
-        $viewUser->fullRead("SELECT id, name, nickname, email, password, adms_sits_user_id, image 
-                              FROM adms_users
-                              WHERE username =:username OR email =:email
+        $viewUser->fullRead("SELECT usu.id, usu.name, usu.nickname, usu.email, usu.password, usu.adms_sits_user_id, usu.image, lev.id id_lev, lev.order_levels
+                              FROM adms_users usu
+                              INNER JOIN adms_access_levels As lev ON lev.id=usu.adms_access_level_id
+                              WHERE usu.username =:username OR usu.email =:email
                               LIMIT :limit",
                               "username={$this->data['username']}&email={$this->data['username']}&limit=1");
                           
@@ -80,6 +81,8 @@ class AdmsLogin extends helper\AdmsConn
             $_SESSION['user_email'] = $this->databaseResult[0]['email'];
             $_SESSION['user_nickname'] = $this->databaseResult[0]['nickname'];
             $_SESSION['user_image'] = $this->databaseResult[0]['image'];
+            $_SESSION['adms_access_level_id'] = $this->databaseResult[0]['id_lev'];
+            $_SESSION['order_levels'] = $this->databaseResult[0]['order_levels'];
           
             $this->result = true;
         }else{

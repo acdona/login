@@ -108,7 +108,10 @@ class AdmsAddUsers
         /** Creates an array of the user situation */
         $registry['sit'] = $list->getReadingResult();
         /** Search for access level in the database */
-        $list->fullRead("SELECT id id_lev, name name_lev FROM adms_access_levels ORDER by name ASC");
+        $list->fullRead("SELECT id id_lev, name name_lev 
+        FROM adms_access_levels 
+        WHERE order_levels >:order_levels
+        ORDER by name ASC", "order_levels=" . $_SESSION['order_levels']);
         /** Creates an new array of the user situation */
         $registry['lev'] = $list->getReadingResult();
 

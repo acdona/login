@@ -89,6 +89,9 @@ if (!defined('R4F5CC')) {
                 <dt class="col-sm-3">Situação</dt>
                 <dd class="col-sm-9"><span class="badge badge-<?php echo $color; ?>"><?php echo $name_sit; ?></span></dd>
 
+                <dt class="col-sm-3">Nível de Acesso</dt>
+                <dd class="col-sm-9"><?php echo $name_lev; ?></dd>
+
             </dl>
             <?php
           

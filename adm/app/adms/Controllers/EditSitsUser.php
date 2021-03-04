@@ -64,7 +64,8 @@ class EditSitsUser
                 $this->viewEditSitsUser();
             }
         } else {
-            $_SESSION['msg'] = "Situação para usuário não encontrado!<br>";
+       
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Situação para usuário não encontrada!</div>";
             $urlDestiny = URLADM . "list-sits-users/index";
             header("Location: $urlDestiny");
         }

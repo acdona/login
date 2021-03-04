@@ -56,7 +56,7 @@ class AdmsDeleteConfEmail
         if ($this->databaseResult) {
             return true;
         } else {
-            $_SESSION['msg'] = "Erro: E-mail não encontrado!";
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: E-mail não encontrado!</div>";
             return false;
         }
     }

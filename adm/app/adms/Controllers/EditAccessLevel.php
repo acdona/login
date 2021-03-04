@@ -73,7 +73,7 @@ class EditAccessLevel
                 $this->viewEditAccessLevel();
             }
         } else {
-            $_SESSION['msg'] = "Nível de acesso não encontrado!<br>";
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Nível de acesso não encontrado!</div>";
             $urlDestiny = URLADM . "list-access-levels/index";
             header("Location: $urlDestiny");
         }

@@ -37,10 +37,11 @@ class AdmsEditUser
     public function viewUser($id) {
         $this->id = (int) $id;
         $viewUser = new \App\adms\Models\helper\AdmsRead();
-        $viewUser->fullRead("SELECT id, name, nickname, email, username, adms_sits_user_id, adms_access_level_id
-                FROM adms_users
-                WHERE id=:id
-                LIMIT :limit", "id={$this->id}&limit=1");
+        $viewUser->fullRead("SELECT usu.id, usu.name, usu.nickname, usu.email, usu.username, usu.adms_sits_user_id, usu.adms_access_level_id
+                FROM adms_users usu
+                INNER JOIN adms_access_levels As lev ON lev.id=usu.adms_access_level_id
+                WHERE usu.id=:id AND lev.order_levels >:order_levels
+                LIMIT :limit", "id={$this->id}&order_levels=".$_SESSION['order_levels']."&limit=1");
 
         $this->databaseResult = $viewUser->getReadingResult();
         if ($this->databaseResult) {
@@ -106,11 +107,12 @@ class AdmsEditUser
         $list->fullRead("SELECT id id_sit, name name_sit FROM adms_sits_users ORDER BY name ASC");
         $registry['sit'] = $list->getReadingResult();
 
-        $list->fullRead("SELECT id id_lev, name name_lev FROM adms_access_levels ORDER by name ASC");
+        $list->fullRead("SELECT id id_lev, name name_lev 
+        FROM adms_access_levels 
+        WHERE order_levels >:order_levels
+        ORDER by name ASC", "order_levels=" . $_SESSION['order_levels']);
+
         $registry['lev'] = $list->getReadingResult();
-
-
-
 
         $this->listRegistryEdit = ['sit' => $registry['sit'], 'lev' => $registry['lev']];
 

@@ -40,7 +40,8 @@ class ViewAccessLevel
                 header("Location: $urlDestiny");
             }
         } else {
-            $_SESSION['msg'] = "Nível de acesso não encontrado!<br>";
+           
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Nível de acesso não encontrado!</div>";
             $urlDestiny = URL . "list-access-levels/index";
             header("Location: $urlDestiny");
         }

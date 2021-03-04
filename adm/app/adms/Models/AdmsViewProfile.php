@@ -42,7 +42,8 @@ class AdmsViewProfile
         if($this->databaseResult) {
             $this->result = true;
         }else {
-            $_SESSION['msg'] = "Usuário não encontrado<br>";
+            
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Usuário não encontrado!</div>";
             $this->result = false;
         }
     }

@@ -51,18 +51,22 @@ class AdmsListUsers
         $pagination->condition($this->pag, $this->limitResult);
         $pagination->pagination("SELECT COUNT(usu.id) AS num_result 
                                 FROM adms_users usu
-                                ");
+                                INNER JOIN adms_access_levels As lev ON lev.id=usu.adms_access_level_id
+                                WHERE lev.order_levels >:order_levels", "order_levels=". $_SESSION['order_levels']);
         $this->resultPg =$pagination->getResult();
 
 
         $ListUsers  = new \App\adms\Models\helper\AdmsRead();
         $ListUsers->fullRead("SELECT usu.id, usu.name, usu.email,
                               sit.name name_sit,
-                              cor.color
-                               FROM adms_users usu
-                               LEFT JOIN adms_sits_users AS sit ON sit.id=usu.adms_sits_user_id
-                               LEFT JOIN adms_colors AS cor ON cor.id = sit.adms_color_id
-                               LIMIT :limit OFFSET :offset", "limit={$this->limitResult}&offset={$pagination->getOffset()}
+                              cor.color,
+                              lev.name name_lev
+                              FROM adms_users usu
+                              LEFT JOIN adms_sits_users AS sit ON sit.id=usu.adms_sits_user_id
+                              LEFT JOIN adms_colors AS cor ON cor.id = sit.adms_color_id
+                              INNER JOIN adms_access_levels As lev ON lev.id=usu.adms_access_level_id
+                              WHERE lev.order_levels >:order_levels
+                              LIMIT :limit OFFSET :offset", "order_levels=". $_SESSION['order_levels'] . "&limit={$this->limitResult}&offset={$pagination->getOffset()}
                                ");
         
         $this->databaseResult = $ListUsers->getReadingResult();

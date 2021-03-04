@@ -70,7 +70,7 @@ class LoadAdmPage
     }
 
     private function restrictedPage() {
-        $this->restrictedPage = ["Dashboard", "ListColors", "ListSitsUsers", "ListUsers", "ListConfEmails", "ViewUser", "ViewColor", "ViewSitsUser", "ViewConfEmail", "EditColor", "EditConfEmail", "EditSitsUser", "EditUser", "AddColor", "AddSitsUser", "AddUser", "AddConfEmail", "EditUserPassword", "EditUserImage", "DeleteUser", "DeleteColor", "DeleteConfEmail", "DeleteSitsUser", "ViewProfile", "EditProfile", "EditProfileImage", "EditProfilePassword", "ListAccessLevels", "ViewAccessLevel", "EditAccessLevel", "AddAccessLevel", "DeleteAccessLevel"];
+        $this->restrictedPage = ["Dashboard", "ListColors", "ListSitsUsers", "ListUsers", "ListConfEmails", "ViewUser", "ViewColor", "ViewSitsUser", "ViewConfEmail", "EditColor", "EditConfEmail", "EditSitsUser", "EditUser", "AddColor", "AddSitsUser", "AddUser", "AddConfEmail", "EditUserPassword", "EditUserImage", "DeleteUser", "DeleteColor", "DeleteConfEmail", "DeleteSitsUser", "ViewProfile", "EditProfile", "EditProfileImage", "EditProfilePassword", "ListAccessLevels", "ViewAccessLevel", "EditAccessLevel", "AddAccessLevel", "DeleteAccessLevel","EditFormLevel", "ViewFormLevel"];
        
         if(in_array($this->urlController, $this->restrictedPage)) {
         
@@ -86,7 +86,7 @@ class LoadAdmPage
 
     private function checkLogin() {
   
-        if(isset($_SESSION['user_id']) AND isset($_SESSION['user_name']) AND isset($_SESSION['user_email'])) {
+        if(isset($_SESSION['user_id']) AND isset($_SESSION['user_name']) AND isset($_SESSION['user_email']) AND isset($_SESSION['adms_access_level_id']) AND isset($_SESSION['order_levels']) ) {
        
             $this->class = "\\App\\adms\\Controllers\\" . $this->urlController;
         } else {

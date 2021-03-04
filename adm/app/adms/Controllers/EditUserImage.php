@@ -61,7 +61,8 @@ class EditUserImage
                 $this->viewEditUserImage();
             }
         } else {
-            $_SESSION['msg'] = "Usuário não encontrado!<br>";
+            
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Usuário não encontrado!</div>";
             $urlDestiny = URLADM . "list-users/index";
             header("Location: $urlDestiny");
         }
