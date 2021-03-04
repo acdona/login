@@ -13,7 +13,7 @@ if (!defined('R4F5CC')) {
                     <h2 class="display-4 title">Listagem - Níveis de Acesso</h2>
                 </div>
                 <div class="p-2">
-                    <a href="<?php echo URLADM; ?>add-color/index" class="btn btn-outline-success btn-sm">Cadastrar</a>
+                    <a href="<?php echo URLADM; ?>add-access-level/index" class="btn btn-outline-success btn-sm">Cadastrar</a>
                 </div>
             </div>
             <hr class="hr-title">
@@ -49,7 +49,7 @@ if (!defined('R4F5CC')) {
 
                             <td class="text-center">
                                 <span class="d-none d-lg-block">
-                                    <a href="<?php echo URLADM . 'view-access-levels/index/' . $id; ?>" class="btn btn-outline-primary btn-sm">Visualizar</a>
+                                    <a href="<?php echo URLADM . 'view-access-level/index/' . $id; ?>" class="btn btn-outline-primary btn-sm">Visualizar</a>
                                     <a href="<?php echo URLADM . 'edit-access-level/index/' . $id; ?>" class="btn btn-outline-warning btn-sm">Editar</a>
                                     <a href="<?php echo URLADM . 'delete-access-level/index/' . $id; ?>" class="btn btn-outline-danger btn-sm" data-confirm="Excluir">Apagar</a> 
                                 </span>
@@ -58,7 +58,7 @@ if (!defined('R4F5CC')) {
                                         Ações
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                        <a class="dropdown-item" href="<?php echo URLADM . 'view-access-levels/index/' . $id; ?>">Visualizar</a>
+                                        <a class="dropdown-item" href="<?php echo URLADM . 'view-access-level/index/' . $id; ?>">Visualizar</a>
                                         <a class="dropdown-item" href="<?php echo URLADM . 'edit-access-level/index//' . $id; ?>">Editar</a>
                                         <a class="dropdown-item" href="<?php echo URLADM . 'delete-access-level/index/' . $id; ?>" data-confirm="Excluir">Apagar</a>
                                     </div>

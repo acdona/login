@@ -7,7 +7,7 @@ if (!defined('R4F5CC')) {
 }
 
 /**
- * AdmsViewColor Model responsible for viewing a category.
+ * AdmsViewAccessLevel Model. Responsible for viewing an access level.
  *
  * @version 1.0
  *
@@ -16,7 +16,7 @@ if (!defined('R4F5CC')) {
  * @access public
  *
 */
-class AdmsViewColor
+class AdmsViewAccessLevel
 {
 
     private array $databaseResult;
@@ -31,20 +31,20 @@ class AdmsViewColor
         return $this->databaseResult;
     }
 
-    public function viewColor($id) {
+    public function viewAccessLevel($id) {
         $this->id = (int) $id;
-        $viewColor = new \App\adms\Models\helper\AdmsRead();
-        $viewColor->fullRead("SELECT id, name, color
-                FROM adms_colors 
+        $viewAccessLevel = new \App\adms\Models\helper\AdmsRead();
+        $viewAccessLevel->fullRead("SELECT id, name, order_levels
+                FROM adms_access_levels 
                 WHERE id=:id
                 LIMIT :limit", "id={$this->id}&limit=1");
                 
-        $this->databaseResult = $viewColor->getReadingResult();
+        $this->databaseResult = $viewAccessLevel->getReadingResult();
  
         if($this->databaseResult){
             $this->result = true;
         }else{
-            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Cor não encontrada!</div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Nível de acesso não encontrado!</div>";
             $this->result = false;
         }
     }

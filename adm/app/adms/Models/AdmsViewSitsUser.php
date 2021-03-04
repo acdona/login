@@ -46,7 +46,7 @@ class AdmsViewSitsUser
             $this->result = true;
         }else{
             $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Situação para usuário não encontrado!</div>";
-            $this->resultado = false;
+            $this->result = false;
         }
     }
 
