@@ -13,10 +13,10 @@ if (isset($this->data['form'])) {
     <div class="list-group-item">
         <div class="d-flex">
                 <div class="mr-auto p-2">
-                    <h2 class="display-4 title">Cadastrar Cor</h2>
+                    <h2 class="display-4 title">Cadastrar Nível de Acesso</h2>
                 </div>
                 <div class="p-2">
-                    <a href="<?php echo URLADM ?>list-colors/index" class="btn btn-outline-info btn-sm">Listar</a>
+                    <a href="<?php echo URLADM ?>list-access-levels/index" class="btn btn-outline-info btn-sm">Listar</a>
                 </div>
         </div>  
         <hr class="hr-title">
@@ -30,11 +30,11 @@ if (isset($this->data['form'])) {
         ?>  
 
         <span class="msg"></span>
-        <form id="add_color" method="POST" action="">
+        <form id="add_access_level" method="POST" action="">
 
             <div class="form-group col-md-6">
                     <label for="name"><span class="text-danger">*</span> Nome</label>
-                    <input name="name" type="text" class="form-control" id="name" placeholder="Nome da cor" autofocus required value="<?php
+                    <input name="name" type="text" class="form-control" id="name" placeholder="Nome do nível de acesso" autofocus required value="<?php
 
                 if (isset($formData['name'])) {
                     echo $formData['name'];
@@ -42,10 +42,10 @@ if (isset($this->data['form'])) {
                 
                 ?>">
 
-                  <label for="color"><span class="text-danger">*</span> Cor</label>
-                    <input name="color" type="text" class="form-control" id="color" placeholder="Código da cor" required value="<?php
-                if (isset($formData['color'])) {
-                    echo $formData['color'];
+                  <label for="order_levels"><span class="text-danger">*</span> Número do nível</label>
+                    <input name="order_levels" type="text" class="form-control" id="order_levels" placeholder="Digite o número do nível" required value="<?php
+                if (isset($formData['order_levels'])) {
+                    echo $formData['order_levels'];
                 }
                 
                 ?>">
@@ -53,7 +53,7 @@ if (isset($this->data['form'])) {
                 <p>
                     <br>
                     <span class="text-danger">*</span> Campo Obrigatório<br><br>
-                    <input name="AddColor" type="submit" class="btn btn-outline-success btn-sm" value="Cadastrar">  
+                    <input name="AddAccessLevel" type="submit" class="btn btn-outline-success btn-sm" value="Cadastrar">  
                 </p>
             </div>
 

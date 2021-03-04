@@ -7,7 +7,7 @@ if (!defined('R4F5CC')) {
 }
 
 /**
- * AdmsAddColor Model responsible for adding a color.
+ * AdmsAddAccessLevel Model. Responsible for adding a access level.
  *
  * @version 1.0
  *
@@ -16,7 +16,7 @@ if (!defined('R4F5CC')) {
  * @access public
  *
 */
-class AdmsAddColor
+class AdmsAddAccessLevel
 {
 
     private array $data;
@@ -32,17 +32,6 @@ class AdmsAddColor
         $valEmptyField->validateData($this->data);
 
         if ($valEmptyField->getResult()) {
-            $this->valInput();
-        } else {
-            $this->result = false;
-        }
-    }
-
-    private function valInput() {
-        $valColor = new \App\adms\Models\helper\AdmsValColor();
-        $valColor->valColor($this->data['name']);
-      
-        if ($valColor->getResult()) {
             $this->add();
         } else {
             $this->result = false;
@@ -50,17 +39,16 @@ class AdmsAddColor
     }
 
     private function add() {
-        $this->data['name'] = $this->data['name'];
-        $this->data['color'] = $this->data['color'];
         $this->data['created'] = date("Y-m-d H:i:s");
-        $createColor = new \App\adms\Models\helper\AdmsCreate();
-        $createColor->exeCreate("adms_colors", $this->data);
 
-        if ($createColor->getCreateResult()) {
-            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Cor cadastrada com sucesso!</div>";
+        $createAccessLevel = new \App\adms\Models\helper\AdmsCreate();
+        $createAccessLevel->exeCreate("adms_access_levels", $this->data);
+
+        if ($createAccessLevel->getCreateResult()) {
+            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Nível de acesso cadastrado com sucesso!</div>";
             $this->result = true;
         }else {
-            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Cor não cadastrada</div>";
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Nível de acesso não cadastrado!</div>";
             $this->result = false;
         }
 
