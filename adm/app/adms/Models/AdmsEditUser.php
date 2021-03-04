@@ -37,7 +37,7 @@ class AdmsEditUser
     public function viewUser($id) {
         $this->id = (int) $id;
         $viewUser = new \App\adms\Models\helper\AdmsRead();
-        $viewUser->fullRead("SELECT id, name, nickname, email, username, adms_sits_user_id
+        $viewUser->fullRead("SELECT id, name, nickname, email, username, adms_sits_user_id, adms_access_level_id
                 FROM adms_users
                 WHERE id=:id
                 LIMIT :limit", "id={$this->id}&limit=1");
@@ -106,7 +106,13 @@ class AdmsEditUser
         $list->fullRead("SELECT id id_sit, name name_sit FROM adms_sits_users ORDER BY name ASC");
         $registry['sit'] = $list->getReadingResult();
 
-        $this->listRegistryEdit = ['sit' => $registry['sit']];
+        $list->fullRead("SELECT id id_lev, name name_lev FROM adms_access_levels ORDER by name ASC");
+        $registry['lev'] = $list->getReadingResult();
+
+
+
+
+        $this->listRegistryEdit = ['sit' => $registry['sit'], 'lev' => $registry['lev']];
 
         return $this->listRegistryEdit;
     }

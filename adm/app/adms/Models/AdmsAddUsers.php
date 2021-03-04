@@ -107,6 +107,12 @@ class AdmsAddUsers
         $list->fullRead("SELECT id id_sit, name name_sit FROM adms_sits_users ORDER by name ASC");
         /** Creates an array of the user situation */
         $registry['sit'] = $list->getReadingResult();
+        /** Search for access level in the database */
+        $list->fullRead("SELECT id id_lev, name name_lev FROM adms_access_levels ORDER by name ASC");
+        /** Creates an new array of the user situation */
+        $registry['lev'] = $list->getReadingResult();
+
+
         /** Create a new array of the user situation */
         /** For exemple: If  there was two consults
          *  $list->fullRead("SELECT id id_sit, name name_sit FROM outro ORDER by name ASC");
@@ -115,7 +121,7 @@ class AdmsAddUsers
          *  $this->listRegistryAdd = ['sit' => $registry['sit'] ,'outro' => $registry['outro']];
          */
       
-        $this->listRegistryAdd = ['sit' => $registry['sit']];
+        $this->listRegistryAdd = ['sit' => $registry['sit'], 'lev' => $registry['lev']];
         return $this->listRegistryAdd;
     }
 }
