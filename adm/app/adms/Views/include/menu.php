@@ -20,6 +20,7 @@
             <ul id="submenu4" class="list-unstyled collapse">
                 <li><a href="<?php echo URLADM; ?>list-sits-users/index"><i class="fab fa-youtube"></i> Lista Situação do usuário</a></li>
                 <li><a href="<?php echo URLADM; ?>list-conf-emails/index"><i class="fab fa-vimeo-v"></i> Lista Conf Emails</a></li>
+                <li><a href="<?php echo URLADM; ?>list-access-levels/index"><i class="fab fa-vimeo-v"></i> Lista Nível Acesso</a></li>
             </ul>
         </li>
 
