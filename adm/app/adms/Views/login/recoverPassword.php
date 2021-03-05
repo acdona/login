@@ -12,8 +12,8 @@ if (isset($this->data['form'])) {
 <form id="new_conf_email" method="POST" action="" class="form-signin">
 
     <div class="text-center mb-4">
-        <img class="mb-4" src="<?php echo URLADM; ?>app/adms/assets/images/login/amacd-2021-novo-verde.png" alt="AMACD" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal text-light">Recuperar a Senha</h1>
+        <img class="mb-4" src="<?php echo URLADM; ?>app/adms/assets/images/login/amacd-2021-novo-branco.png" alt="AMACD" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Recuperar a Senha</h1>
     </div>
 
     <?php
@@ -25,13 +25,13 @@ if (isset($this->data['form'])) {
     <span class="msg"></span>
 
     <div class="form-label-group">
-        <label for="email">Digite seu email cadastrado</label><br><br>
-        <input name="email" type="email" id="email" class="form-control mb-4" placeholder="Digite o e-mail cadastrado" value="<?php
+        
+        <input name="email" type="email" id="email" class="form-control" placeholder="Digite o e-mail cadastrado" value="<?php
         if (isset($formData['email'])) {
             echo $formData['email'];
         }
         ?>" required>
-        
+        <label for="email">Digite seu email cadastrado</label>
     </div>
 
     <input name="RecoverPassword" type="submit" value="Recuperar" class="btn btn-lg btn-primary btn-block"> 

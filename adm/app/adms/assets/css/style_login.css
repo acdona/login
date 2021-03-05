@@ -14,17 +14,17 @@ body {
 }
 
 .form-signin {
-  color: #ffffff;
   width: 100%;
   max-width: 420px;
   padding: 15px;
   margin: auto;
+  color:rgb(255, 255, 255);
   background-color: #060818;
 }
 
 .form-label-group {
   position: relative;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
 }
 
 .form-label-group input,
@@ -81,7 +81,7 @@ body {
 
 .form-label-group input:not(:placeholder-shown) {
   padding-top: 1.25rem;
-  padding-bottom: 1rem;
+  padding-bottom: .25rem;
 }
 
 .form-label-group input:not(:-moz-placeholder-shown) ~ label {
