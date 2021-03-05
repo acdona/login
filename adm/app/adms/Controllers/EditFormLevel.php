@@ -26,10 +26,11 @@ class EditFormLevel
     public function index() {
 
         $this->formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        if (empty($this->dadosForm['EditFormLevel'])) {
+        if (empty($this->formData['EditFormLevel'])) {
             $viewFormLevel = new \App\adms\Models\AdmsEditFormLevel();
             $viewFormLevel->viewFormLevel();
             if ($viewFormLevel->getResult()) {
+                //verdadeiro 1
                 $this->data['form'] = $viewFormLevel->getDatabaseResult();
                 $this->viewEditFormLevel();
             } else {
@@ -42,10 +43,10 @@ class EditFormLevel
     }
 
     private function viewEditFormLevel() {
-        
-        $listSelect = new \App\adms\Models\AdmsLevelForm();
+       
+        $listSelect = new \App\adms\Models\AdmsEditFormLevel();
         $this->data['select'] = $listSelect->listSelect();        
-        
+       
         $this->data['sidebarActive'] = "view-form-level";
         
         $loadView = new \Core\ConfigView("adms/Views/formLevels/editFormLevel", $this->data);
@@ -53,6 +54,7 @@ class EditFormLevel
     }
 
     private function editFormLevel() {
+        
         if (!empty($this->formData['EditFormLevel'])) {
             unset($this->formData['EditFormLevel']);
             $editFormLevel = new \App\adms\Models\AdmsEditFormLevel();

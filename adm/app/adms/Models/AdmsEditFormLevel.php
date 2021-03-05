@@ -39,9 +39,10 @@ class AdmsEditFormLevel
                 FROM adms_levels_forms form
                 LIMIT :limit", "limit=1");
 
-        $this->resultadoBd = $viewUser->getReadingResult();
+        $this->databaseResult = $viewUser->getReadingResult();
         if ($this->databaseResult) {
             $this->result = true;
+           //chegou aqui
         } else {
             $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Nível de acesso, para formulário novo usuário, não encontrado!</div>";
             $this->result = false;
@@ -49,7 +50,7 @@ class AdmsEditFormLevel
     }
 
     public function update(array $data) {
-        $this->dados = $data;
+        $this->data = $data;
 
         $valEmptyField = new \App\adms\Models\helper\AdmsValEmptyField();
         $valEmptyField->validateData($this->data);
@@ -68,14 +69,15 @@ class AdmsEditFormLevel
 
         if ($upUser->getResult()) {
             $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Nível de acesso, para formulário novo usuário, editado com sucesso!</div>";
-            $this->resultado = true;
+            $this->result = true;
         } else {
             $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Nível de acesso, para formulário novo usuário, não editado!</div>";
-            $this->resultado = false;
+            $this->result = false;
         }
     }
 
     public function listSelect() {
+        
         $list = new \App\adms\Models\helper\AdmsRead();
         $list->fullRead("SELECT id id_lev, name name_lev
                 FROM adms_access_levels
@@ -84,8 +86,9 @@ class AdmsEditFormLevel
         $registry['lev'] = $list->getReadingResult();
 
         $this->listRegistryEdit = ['lev' => $registry['lev']];
-
+        
         return $this->listRegistryEdit;
+        
     }
 
 }

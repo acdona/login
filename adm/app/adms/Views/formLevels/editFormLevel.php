@@ -4,13 +4,14 @@ if (!defined('R4F5CC')) {
     die("Erro: Página não encontrada!");
 }
 
-if (isset($this->dados['form'])) {
-    $valorForm = $this->dados['form'];
+if (isset($this->data['form'])) {
+    $formData = $this->data['form'];
 }
 
-if (isset($this->dados['form'][0])) {
-    $valorForm = $this->dados['form'][0];
+if (isset($this->data['form'][0])) {
+    $formData = $this->data['form'][0];
 }
+//var_dump($this->data); exit;
 ?>
 <div class="content p-1">
     <div class="list-group-item">
@@ -19,8 +20,8 @@ if (isset($this->dados['form'][0])) {
                 <h2 class="display-4 title">Editar</h2>
             </div>
             <?php
-            if (!empty($valorForm)) {
-                extract($valorForm);
+            if (!empty($formData)) {
+                extract($formData);
                 ?>
                 <div class="p-2">
                     <span class="d-none d-lg-block">
@@ -48,8 +49,8 @@ if (isset($this->dados['form'][0])) {
         ?>
         <form id="edit_user" method="POST" action="">
             <input name="id" type="hidden" id="id" value="<?php
-            if (isset($valorForm['id'])) {
-                echo $valorForm['id'];
+            if (isset($formData['id'])) {
+                echo $formData['id'];
             }
             ?>">
             
@@ -58,9 +59,9 @@ if (isset($this->dados['form'][0])) {
                 <select name="adms_access_level_id" id="adms_access_level_id" class="form-control">
                     <option value="">Selecione</option>
                     <?php
-                    foreach ($this->dados['select']['lev'] as $sit) {
+                    foreach ($this->data['select']['lev'] as $sit) {
                         extract($sit);
-                        if ((isset($valorForm['adms_access_level_id'])) AND $valorForm['adms_access_level_id'] == $id_lev) {
+                        if ((isset($formData['adms_access_level_id'])) AND $formData['adms_access_level_id'] == $id_lev) {
                             echo "<option value='$id_lev' selected>$name_lev</option>";
                         } else {
                             echo "<option value='$id_lev'>$name_lev</option>";
@@ -74,7 +75,7 @@ if (isset($this->dados['form'][0])) {
                 <span class="text-danger">*</span> Campo Obrigatório
             </p>
 
-            <input name="EditLevelsForms" type="submit" class="btn btn-outline-warning btn-sm" value="Salvar"> 
+            <input name="EditFormLevel" type="submit" class="btn btn-outline-warning btn-sm" value="Salvar"> 
 
         </form>
     </div>
