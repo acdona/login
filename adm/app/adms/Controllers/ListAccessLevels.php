@@ -30,11 +30,18 @@ class ListAccessLevels
 
         $listAccessLevels = new \App\adms\Models\AdmsListAccessLevels();
         $listAccessLevels->listAccessLevels($this->pag);
-    
-        $this->data['listAccessLevels']   = $listAccessLevels->getDatabaseResult();
-        $this->data['pagination'] = $listAccessLevels->getResultPg();
 
-        $this->dadata['sidebarActive'] = "list-access-levels";
+        if ($listAccessLevels->getResult()){
+            $this->data['listAccessLevels']   = $listAccessLevels->getDatabaseResult();
+            $this->data['pagination'] = $listAccessLevels->getResultPg();
+
+        } else
+        {
+            $this->dados['listAccessLevels'] = [];
+            $this->dados['pagination'] = null;
+        }
+        $this->data['pag'] = $this->pag;
+        $this->data['sidebarActive'] = "list-access-levels";
         $loadView = new \Core\ConfigView("adms/Views/accessLevels/listAccessLevels" , $this->data);
         $loadView->render();
     }

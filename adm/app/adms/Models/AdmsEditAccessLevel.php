@@ -47,14 +47,15 @@ class AdmsEditAccessLevel
         $viewAccessLevel->fullRead("SELECT id, name, order_levels
                 FROM adms_access_levels
                 WHERE id=:id
-                LIMIT :limit", "id={$this->id}&limit=1");
+                AND order_levels >:order_levels
+                LIMIT :limit", "id={$this->id}&order_levels=" . $_SESSION['order_levels'] . "&limit=1");
 
         $this->databaseResult = $viewAccessLevel->getReadingResult();
         if ($this->databaseResult) {
             
             $this->result = true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Nível de acesso não encontrado!</div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Nível de acesso não encontrado ou sem permissão de acesso!</div>";
             $this->result = false;
         }
     }

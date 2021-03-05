@@ -41,7 +41,7 @@ abstract class AdmsConn
         } catch (Exception $ex) {
             die('Erro: Por favor tente novamente. Caso o problema persista, entre em contato o administrador ' . EMAILADM . '<br>');
             
-            $urlDestiny = URL . "error/index";
+            $urlDestiny = URLADM . "error/index";
             header("Location: $urlDestiny");
         }
     }

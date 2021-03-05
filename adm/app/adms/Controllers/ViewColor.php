@@ -36,13 +36,13 @@ class ViewColor
                 $this->data['viewColor'] = $viewColor->getDatabaseResult();
                 $this->viewColor();
             } else {
-                $urlDestiny = URL . "list-colors/index";
+                $urlDestiny = URLADM . "list-colors/index";
                 header("Location: $urlDestiny");
             }
         } else {
             $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Cor não encontrada!</div>";
             
-            $urlDestiny = URL . "list-colors/index";
+            $urlDestiny = URLADM . "list-colors/index";
             header("Location: $urlDestiny");
         }
     }

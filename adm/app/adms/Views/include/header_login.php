@@ -15,7 +15,7 @@
         <!--Caminho da Font Awesome ------------------------------------------------------------------------------------------------>
         <link rel="stylesheet" href="<?php echo URLADM; ?>app/adms/assets/css/all.css">
         <link rel="stylesheet" href="<?php echo URLADM; ?>app/adms/assets/css/style_login.css">
-        <link rel="stylesheet" href="<?php echo URLADM; ?>app/adms/assets/css/style_adms.css">
+        
         <title>Adm - AMACD</title>
     </head>
     <body class="text-center">

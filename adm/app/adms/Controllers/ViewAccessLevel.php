@@ -36,13 +36,13 @@ class ViewAccessLevel
                 $this->data['viewAccessLevel'] = $viewAccessLevel->getDatabaseResult();
                 $this->viewAccessLevel();
             } else {
-                $urlDestiny = URL . "list-access-levels/index";
+                $urlDestiny = URLADM . "list-access-levels/index";
                 header("Location: $urlDestiny");
             }
         } else {
            
             $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Nível de acesso não encontrado!</div>";
-            $urlDestiny = URL . "list-access-levels/index";
+            $urlDestiny = URLADM . "list-access-levels/index";
             header("Location: $urlDestiny");
         }
     }

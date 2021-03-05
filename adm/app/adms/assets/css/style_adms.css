@@ -23,7 +23,7 @@ body {
   background-color: #222c3c;
   min-width: 250px;
   max-width: 250px;
-  min-height: calc(100vh - 62px);
+  min-height: calc(100vh - 82px);
   transition: all 0.3s;
 }
 
