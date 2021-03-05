@@ -35,9 +35,10 @@ class ListSitsUsers
             $this->data['listSitsUsers'] = [];
             $this->data['pagination'] = null;
         }
-        
-       $loadView = new \Core\ConfigView("adms/Views/sitsUser/listSitsUsers", $this->data);
-       $loadView->render();
+       
+        $this->data['sidebarActive'] = "list-sits-users"; 
+        $loadView = new \Core\ConfigView("adms/Views/sitsUser/listSitsUsers", $this->data);
+        $loadView->render();
     }
 
 }

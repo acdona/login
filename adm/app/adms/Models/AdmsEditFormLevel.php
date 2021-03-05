@@ -1,5 +1,4 @@
 <?php
-
 namespace App\adms\Models;
 
 if (!defined('R4F5CC')) {
@@ -42,7 +41,7 @@ class AdmsEditFormLevel
         $this->databaseResult = $viewUser->getReadingResult();
         if ($this->databaseResult) {
             $this->result = true;
-           //chegou aqui
+          
         } else {
             $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Nível de acesso, para formulário novo usuário, não encontrado!</div>";
             $this->result = false;
@@ -90,5 +89,4 @@ class AdmsEditFormLevel
         return $this->listRegistryEdit;
         
     }
-
 }

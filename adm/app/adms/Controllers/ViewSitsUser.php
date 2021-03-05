@@ -44,6 +44,7 @@ class ViewSitsUser
     }
     
     private function viewSitsUser() {
+        $this->data['sidebarActive'] = "list-sits-users";
         $loadView = new \Core\ConfigView("adms/Views/sitsUser/viewSitsUser", $this->data);
         $loadView->render();
     }

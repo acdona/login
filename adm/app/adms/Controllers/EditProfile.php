@@ -42,6 +42,7 @@ class EditProfile
     }
     
     private function viewEditProfile() {
+        $this->data['sidebarActive'] = "view-profile";
         $loadView= new \Core\ConfigView("adms/Views/users/editProfile", $this->data);
         $loadView->render();
     }

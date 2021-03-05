@@ -43,7 +43,7 @@ class AddConfEmail
     }
 
     private function viewAddConfEmail() {
-
+        $this->data['sidebarActive'] = "list-conf-emails";
         $carregarView = new \Core\ConfigView("adms/Views/confEmails/addConfEmail", $this->data);
         $carregarView->render();
     }

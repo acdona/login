@@ -43,7 +43,7 @@ class AddAccessLevel
     }
 
        private function viewNewAccessLevel() {  
-
+            $this->data['sidebarActive'] = "list-access-levels";
             $loadView = new \Core\ConfigView("adms/Views/accessLevels/addAccessLevel", $this->data);
             $loadView->render();   
        }

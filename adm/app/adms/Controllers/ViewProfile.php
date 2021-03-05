@@ -37,6 +37,7 @@ class ViewProfile
     }
 
     private function viewProfile() {
+        $this->data['sidebarActive'] = "view-profile";
         $loadView= new \Core\ConfigView("adms/Views/users/viewProfile", $this->data);
         $loadView->render();
 

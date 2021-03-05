@@ -6,8 +6,8 @@
 }
 
 $sidebar_active = "";
-if(isset($this->dados['sidebarActive'])){
-    $sidebar_active = $this->dados['sidebarActive'];
+if(isset($this->data['sidebarActive'])){
+    $sidebar_active = $this->data['sidebarActive'];
 }
 ?>
 

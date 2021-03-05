@@ -11,8 +11,8 @@ if (isset($this->data['form'])) {
 if (isset($this->data['form'][0])) {
     $formData = $this->data['form'][0];
 }
-//var_dump($this->data); exit;
 ?>
+
 <div class="content p-1">
     <div class="list-group-item">
         <div class="d-flex">
@@ -59,14 +59,14 @@ if (isset($this->data['form'][0])) {
                 <select name="adms_access_level_id" id="adms_access_level_id" class="form-control">
                     <option value="">Selecione</option>
                     <?php
-                    foreach ($this->data['select']['lev'] as $sit) {
-                        extract($sit);
-                        if ((isset($formData['adms_access_level_id'])) AND $formData['adms_access_level_id'] == $id_lev) {
-                            echo "<option value='$id_lev' selected>$name_lev</option>";
-                        } else {
-                            echo "<option value='$id_lev'>$name_lev</option>";
+                        foreach ($this->data['select']['lev'] as $sit) {
+                            extract($sit);
+                            if ((isset($formData['adms_access_level_id'])) AND $formData['adms_access_level_id'] == $id_lev) {
+                                echo "<option value='$id_lev' selected>$name_lev</option>";
+                            } else {
+                                echo "<option value='$id_lev'>$name_lev</option>";
+                            }
                         }
-                    }
                     ?>
                 </select>
             </div>

@@ -36,8 +36,9 @@ class ListConfEmails
             $this->data['pagination'] = null;
         }
         
-       $loadView = new \Core\ConfigView("adms/Views/confEmails/listConfEmails", $this->data);
-       $loadView->render();
+        $this->data['sidebarActive'] = "list-conf-emails";
+        $loadView = new \Core\ConfigView("adms/Views/confEmails/listConfEmails", $this->data);
+        $loadView->render();
     }
 
 

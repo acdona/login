@@ -34,7 +34,7 @@ class ListColors
         $this->data['listColors']   = $listColors->getDatabaseResult();
         $this->data['pagination'] = $listColors->getResultPg();
 
-     
+        $this->data['sidebarActive'] = "list-colors";
         $loadView = new \Core\ConfigView("adms/Views/colors/listColors" , $this->data);
         $loadView->render();
     }

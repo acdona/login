@@ -75,6 +75,8 @@ class AddUser
         /** Loads the method to show the select. */
         $this->data['select'] = $listSelect->listSelect();
 
+        $this->data['sidebarActive'] = "list-users";
+
         /** Loads the View addUser */
         $loadView = new \Core\ConfigView("adms/Views/users/addUser", $this->data);
 

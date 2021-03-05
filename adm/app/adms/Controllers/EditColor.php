@@ -41,7 +41,7 @@ class EditColor
             $viewColor->viewColor($this->id);
             if ($viewColor->getResult()) {
                 $this->data['form'] = $viewColor->getDatabaseResult();
-                $this->viewColor();
+                $this->viewEditColor();
             } else {
                 $urlDestiny = URLADM . "list-colors/index";
                 header("Location: $urlDestiny");
@@ -51,8 +51,8 @@ class EditColor
         }
     }
 
-    private function viewColor() {       
-   
+    private function viewEditColor() {       
+        $this->data['sidebarActive'] = "list-colors";
         $loadView = new \Core\ConfigView("adms/Views/colors/editColor", $this->data);
         $loadView->render();
     }
@@ -67,7 +67,7 @@ class EditColor
                 header("Location: $urlDestiny");
             } else {
                 $this->data['form'] = $this->formData;
-                $this->viewColor();
+                $this->viewEditColor();
             }
         } else {
             $_SESSION['msg'] = "Cor não encontrada!<br>";

@@ -44,7 +44,7 @@ class EditConfEmail
     }
 
     private function viewEditConfEmail() {               
-        
+        $this->data['sidebarActive'] = "list-conf-emails";
         $loadView = new \Core\ConfigView("adms/Views/confEmails/editConfEmail", $this->data);
         $loadView->render();
     }

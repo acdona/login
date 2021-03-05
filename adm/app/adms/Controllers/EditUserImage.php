@@ -43,6 +43,7 @@ class EditUserImage
     }
 
     private function viewEditUserImage() {
+        $this->data['sidebarActive'] = "list-users";
         $carregarView = new \Core\ConfigView("adms/Views/users/editUserImage", $this->data);
         $carregarView->render();
     }

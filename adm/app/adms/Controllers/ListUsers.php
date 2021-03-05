@@ -39,6 +39,7 @@ class ListUsers
             $this->data['pagination'] = null;
         }
         
+        $this->data['sidebarActive'] = "list-users";
         $loadView = new \Core\ConfigView("adms/Views/users/listUsers" , $this->data);
         $loadView->render();
     }

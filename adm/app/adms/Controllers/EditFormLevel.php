@@ -1,5 +1,4 @@
 <?php
-
 namespace App\adms\Controllers;
 
 if(!defined('R4F5CC')){
@@ -30,7 +29,6 @@ class EditFormLevel
             $viewFormLevel = new \App\adms\Models\AdmsEditFormLevel();
             $viewFormLevel->viewFormLevel();
             if ($viewFormLevel->getResult()) {
-                //verdadeiro 1
                 $this->data['form'] = $viewFormLevel->getDatabaseResult();
                 $this->viewEditFormLevel();
             } else {
@@ -72,5 +70,4 @@ class EditFormLevel
             header("Location: $urlDestiny");
         }
     }
-
 }

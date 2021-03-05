@@ -44,7 +44,9 @@ class EditSitsUser
     private function viewEditSitsUser() {        
         
         $listSelect = new \App\adms\Models\AdmsEditSitsUser();
-        $this->data['select'] = $listSelect->listSelect();        
+        $this->data['select'] = $listSelect->listSelect();       
+        
+        $this->data['sidebarActive'] = "list-sits-users";
         
         $carregarView = new \Core\ConfigView("adms/Views/sitsUser/editSitsUser", $this->data);
         $carregarView->render();

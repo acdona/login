@@ -43,7 +43,7 @@ class AddColor
     }
 
        private function viewNewColor() {  
-
+            $this->data['sidebarActive'] = "list-colors";
             $carregarView = new \Core\ConfigView("adms/Views/colors/addColor", $this->data);
             $carregarView->render();   
        }

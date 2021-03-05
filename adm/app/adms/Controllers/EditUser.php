@@ -45,6 +45,8 @@ class EditUser
           
         $listSelect = new \App\adms\Models\AdmsEditUser();
         $this->data['select'] = $listSelect->listSelect();        
+
+        $this->data['sidebarActive'] = "list-users";
         
         $carregarView = new \Core\ConfigView("adms/Views/users/editUser", $this->data);
         $carregarView->render();

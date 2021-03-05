@@ -52,6 +52,7 @@ class EditProfilePassword
      */
     private function viewEditProfilePass()
     {
+        $this->data['sidebarActive'] = "view-profile";
         $loadView = new \Core\ConfigView("adms/Views/users/editProfilePassword", $this->data);
         $loadView->render();
 

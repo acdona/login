@@ -40,6 +40,7 @@ class EditProfileImage
     }
 
     private function viewEditProfileImage() {
+        $this->data['sidebarActive'] = "view-profile";
         $loadView = new \Core\ConfigView("adms/Views/users/editProfileImage", $this->data);
         $loadView->render();
     }

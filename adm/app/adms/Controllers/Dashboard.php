@@ -20,11 +20,11 @@ class Dashboard
 {
 
     public function index() {
-      
+        $this->data['sidebarActive'] = "dashboard";
+
         $loadView= new \Core\ConfigView("adms/Views/dashboard/home");
         $loadView->render();
     }
-
 }
 
 ?>
