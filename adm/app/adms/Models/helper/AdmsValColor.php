@@ -6,7 +6,7 @@ if (!defined('R4F5CC')) {
     die("Erro: Página não encontrada!");
 }
 /**
- * Classe AdmsValColor responsável por validar se a cor existe
+ * AdmsValColor responsável por validar se a cor existe
  *
  * @version 1.0
  *

@@ -7,7 +7,7 @@ if (!defined('R4F5CC')) {
 }
 
 /**
- * Classe AdmsAddSitsUser responsável por 
+ * AdmsAddSitsUser Model. Responsible for adding user's situation.
  *
  * @version 1.0
  *

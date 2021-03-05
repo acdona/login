@@ -29,7 +29,8 @@ class DeleteConfEmail
             $deleteConfEmail = new \App\adms\Models\AdmsDeleteConfEmail();
             $deleteConfEmail->deleteConfEmail($this->id);
         }else{
-            $_SESSION['msg'] = "Erro: Necessário selecionar um E-mail!";
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Necessário selecionar um E-mail!</div>";
+            
         }
         
         $urlDestiny = URLADM . "list-conf-emails/index";

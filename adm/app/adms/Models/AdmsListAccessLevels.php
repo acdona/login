@@ -66,7 +66,8 @@ class AdmsListAccessLevels
         if($this->databaseResult) {
             $this->result = true;
         }else{
-            $_SESSION['msg'] = "Nenhum nível de acesso encontrado!<br>";
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Nenhum nível de acesso encontrado!</div>";
+            
             $this->result = false;
         }    
     }

@@ -28,7 +28,8 @@ class ConfEmail
         if(!empty($this->key)) {
             $this->validateKey();
         }else {
-            $_SESSION['msg'] = "Erro: Link inválido!<br>";
+            
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Link inválido!</div>";
             $urlDestiny = URLADM . "login/index";
             header("Location: $urlDestiny");
         }

@@ -7,7 +7,7 @@ if (!defined('R4F5CC')) {
 }
 
 /**
- * Classe AdmsSlug responsável por 
+ * AdmsSlug Helper. Responsible for replacing special characters.
  *
  * @version 1.0
  *

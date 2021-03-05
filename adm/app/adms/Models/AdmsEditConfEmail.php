@@ -80,10 +80,12 @@ class AdmsEditConfEmail
         $upConfEmail->exeUpdate("adms_confs_emails", $this->data, "WHERE id =:id", "id={$this->data['id']}");
 
         if ($upConfEmail->getResult()) {
-            $_SESSION['msg'] = "E-mail editado com sucesso!<br>";
+            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>E-mail editado com sucesso!</div>";
+            
             $this->result = true;
         } else {
-            $_SESSION['msg'] = "Erro: E-mail não editado com sucesso!<br>";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: E-mail não editado!</div>";
+            
             $this->result = false;
         }
     }

@@ -7,7 +7,7 @@ if (!defined('R4F5CC')) {
 }
 
 /**
- * AdmsValPassword Classe. Responsible for validating the password. 
+ * AdmsValPassword Helper. Responsible for validating the password. 
  *
  * @version 1.0
  *

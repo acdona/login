@@ -61,7 +61,8 @@ class EditConfEmailPassword
                 $this->viewEditConfEmailPass();
             }
         } else {
-            $_SESSION['msg'] = "E-mail não encontrado!<br>";
+            
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: E-mail não encontrado!</div>";
             $urlDestiny = URLADM . "list-conf-emails/index";
             header("Location: $urlDestiny");
         }

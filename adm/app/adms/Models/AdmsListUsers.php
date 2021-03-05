@@ -29,7 +29,7 @@ class AdmsListUsers
     private array $databaseResult;
 
     /** @var bool $result Checks whether the database query worked. */
-    private bool $resulta;
+    private bool $result;
 
     function getResult(): bool {
         return $this->result;
@@ -73,7 +73,8 @@ class AdmsListUsers
         if($this->databaseResult) {
             $this->result = true;
         }else{
-            $_SESSION['msg'] = "Nenhum usuário encontrado!<br>";
+            
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Nenhum usuário encontrado!</div>";
             $this->result = false;
         }    
     }

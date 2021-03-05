@@ -3,8 +3,8 @@ if (!defined('R4F5CC')) {
     header("Location: /");
     die("Erro: Página não encontrada!");
 }
-if(isset($this->dados['form'])) {
-    $valorForm = $this->dados['form'];
+if(isset($this->data['form'])) {
+    $formData = $this->data['form'];
 }
 
 ?>
@@ -23,8 +23,8 @@ if(isset($this->dados['form'])) {
         <div class="form-label-group">
         <label for="password">Senha</label><br><br>
         <input name="password" type="password" id="password" class="form-control" placeholder="Digite a senha" value="<?php
-        if (isset($valorForm['password'])) {
-            echo $valorForm['password'];
+        if (isset($formData['password'])) {
+            echo $formData['password'];
         }
         ?>" onkeyup="passwordStrength()" required>
         

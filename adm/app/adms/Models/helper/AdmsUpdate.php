@@ -9,7 +9,7 @@ if (!defined('R4F5CC')) {
 use Exception;
 
 /**
- * Classe AdmsUpdate. Responsible for generic update.
+ * AdmsUpdate. Responsible for generic update.
  *
  * @version 1.0
  *

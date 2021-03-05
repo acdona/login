@@ -70,7 +70,8 @@ class EditColor
                 $this->viewEditColor();
             }
         } else {
-            $_SESSION['msg'] = "Cor não encontrada!<br>";
+            
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Cor não encontrada!</div>";
             $urlDestiny = URLADM . "list-colors/index";
             header("Location: $urlDestiny");
         }

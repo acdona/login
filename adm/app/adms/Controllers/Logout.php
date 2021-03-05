@@ -27,8 +27,8 @@ class Logout
               $_SESSION['user_image']);
         
         $_SESSION['msg'] = '<div class="alert alert-success" role="alert">Deslogado com sucesso!</div>';
-        $urlDestino = URLADM . 'login/index';
-        header("Location: $urlDestino");
+        $urlDestiny = URLADM . 'login/index';
+        header("Location: $urlDestiny");
     }
 
 }

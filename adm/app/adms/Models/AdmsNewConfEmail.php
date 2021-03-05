@@ -55,11 +55,13 @@ class AdmsNewConfEmail
             if ($this->valConfEmail()) {
                 $this->sendEmail();
             } else {
-                $_SESSION['msg'] = "Erro: Link não enviado, tente novamente!<br>";
+                
+                $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Link não enviado, tente novamente!</div>";
                 $this->result = false;
             }
         } else {
-            $_SESSION['msg'] = "Erro: E-mail não cadastrado!<br>";
+            
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: E-mail não cadastrado!</div>";
             $this->result = false;
         } 
     }
@@ -94,11 +96,13 @@ class AdmsNewConfEmail
         $this->emailText();
         $sendEmail->sendEmail($this->emailData, 2);
         if ($sendEmail->getResult()) {
-            $_SESSION['msg'] = "Novo link enviado com sucesso. Acesse a sua caixa de e-mail para confimar o e-mail!";
+            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Novo link enviado com sucesso. Acesse a sua caixa de e-mail para confimar o e-mail!</div>";
+            
             $this->result = true;
         } else {
             $this->fromEmail = $sendEmail->getFromEmail();
-            $_SESSION['msg'] = "Erro: Link não enviado, tente novamente ou entre em contato com o e-mail {$this->fromEmail}!";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Link não enviado, tente novamente ou entre em contato com o e-mail {$this->fromEmail}!</div>";
+            
             $this->result = false;
         }
     }

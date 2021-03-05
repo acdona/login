@@ -64,7 +64,8 @@ class AdmsListColors
         if($this->databaseResult) {
             $this->result = true;
         }else{
-            $_SESSION['msg'] = "Nenhuma cor encontrada!<br>";
+            
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Nenhuma cor encontrada!</div>";
             $this->result = false;
         }    
     }

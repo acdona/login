@@ -83,8 +83,6 @@ class AdmsNewUser
             
             if ($createUser->getCreateResult()) {
                 
-                // $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Usuário cadastrado com sucesso!</div>";
-                // $this->result = true;
                 $this->sendEmail();
 
             } else {
@@ -120,11 +118,13 @@ class AdmsNewUser
         $this->emailText();
         $sendEmail->sendEmail($this->emailData, 4);
         if ($sendEmail->getResult()) {
-            $_SESSION ['msg'] = "Usuário cadastrado com sucesso. Acesse a sua caixa de e-mail para confimar o e-mail!";
+            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Usuário cadastrado com sucesso. Acesse a sua caixa de e-mail para confimar o e-mail!</div>";
+            
             $this->result = true;
         } else {
             $this->fromEmail = $sendEmail->getFromEmail();
-            $_SESSION['msg'] = "Usuário cadastrado com sucesso. Houve erro ao enviar o e-mail de confirmação, entre em contado com " . $this->fromEmail . " para mais informações!";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Usuário cadastrado com sucesso. Houve erro ao enviar o e-mail de confirmação, entre em contado com " . $this->fromEmail . " para mais informações!</div>";
+
             $this->result = true;
         }
     }

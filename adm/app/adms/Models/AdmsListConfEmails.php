@@ -57,7 +57,8 @@ class AdmsListConfEmails
         if ($this->databaseResult) {
             $this->result = true;
         } else {
-            $_SESSION['msg'] = "Nenhum e-mail encontrado!<br>";
+            
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Nenhum e-mail encontrado!</div>";
             $this->result = false;
         }
     }

@@ -32,7 +32,8 @@ class AdmsValEmail
         if(filter_var($this->email, FILTER_VALIDATE_EMAIL)){
             $this->result = true;
         }else{
-            $_SESSION['msg'] = "Erro: E-mail inválido!";
+            
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: E-mail inválido!</div>";
             $this->result = false;            
         }
     }

@@ -7,7 +7,7 @@ if (!defined('R4F5CC')) {
 }
 
 /**
- * Classe AdmsConfEmail responsável por 
+ * AdmsConfEmail Model. Responsible for setting up email.
  *
  * @version 1.0
  *
@@ -46,7 +46,8 @@ class AdmsConfEmail
             $this->updateSitUser();
         }else{
             
-            $_SESSION['msg'] = "Erro: Link inválido!<br>";
+            
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Link inválido!</div>";
             $this->result = false;
         }    
     }
@@ -61,10 +62,11 @@ class AdmsConfEmail
             $up_conf_email->exeUpdate("adms_users", $this->saveData, "WHERE id=:id", "id={$this->databaseResult[0]['id']}");
 
             if($up_conf_email->getResult()) {
-                $_SESSION['msg'] = "E-mail ativado com sucesso!<br>";
+               
+                $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>E-mail ativado com sucesso!</div>";
                 $this->result = true;
             } else {
-                $_SESSION['msg'] = "Erro: Link inválido!<br>";
+                $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Link inválido!</div>";
                 $this->result = false;
             }
     }

@@ -27,8 +27,8 @@ if (isset($this->data['form'])) {
     <div class="form-label-group">
         <label for="email">Digite seu email cadastrado</label><br><br>
         <input name="email" type="email" id="email" class="form-control mb-4" placeholder="Digite o e-mail cadastrado" value="<?php
-        if (isset($valorForm['email'])) {
-            echo $valorForm['email'];
+        if (isset($formData['email'])) {
+            echo $formData['email'];
         }
         ?>" required>
         

@@ -28,7 +28,8 @@ class DeleteUser
             $deleteUser = new \App\adms\Models\AdmsDeleteUser();
             $deleteUser->deleteUser($this->id);
         }else{
-            $_SESSION['msg'] = "Erro: Necessário selecionar um usuário!";
+            $_SESSION['msg'] = "<div class='alert alert-warning' role='alert'>Erro: Necessário selecionar um usuário!</div>";
+            
         }
         
         $urlDestiny = URLADM . "list-users/index";

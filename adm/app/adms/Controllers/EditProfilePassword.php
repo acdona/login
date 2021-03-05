@@ -64,8 +64,8 @@ class EditProfilePassword
             $editProfile = new \App\adms\Models\AdmsEditProfilePassword();
             $editProfile->update($this->formData);
             if($editProfile->getResult()) {
-                $urlDestino = URLADM . "view-profile/index";
-                header("Location: $urlDestino");
+                $urlDestiny = URLADM . "view-profile/index";
+                header("Location: $urlDestiny");
             }else {
                 $this->data['form'] = $this->formData;
                 $this->viewEditProfilePass();

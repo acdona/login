@@ -33,8 +33,8 @@ class EditSitsUser
                 $this->data['form'] = $viewSitsUser->getDatabaseResult();
                 $this->viewEditSitsUser();
             } else {
-                $urlDestino = URLADM . "list-sits-users/index";
-                header("Location: $urlDestino");
+                $urlDestiny = URLADM . "list-sits-users/index";
+                header("Location: $urlDestiny");
             }
         } else {
             $this->editSitsUser();

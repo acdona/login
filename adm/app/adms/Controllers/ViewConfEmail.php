@@ -8,7 +8,7 @@ if (!defined('R4F5CC')) {
 
 
 /**
- * Classe ViewConfEmail responsável por 
+ * ViewConfEmail Controller. Responsible for viewing the email configuration.
  *
  * @version 1.0
  *

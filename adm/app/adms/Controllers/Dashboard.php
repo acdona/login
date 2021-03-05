@@ -7,7 +7,7 @@ if (!defined('R4F5CC')) {
 }
 
 /**
- * Classe Dashboard responsável por 
+ * Dashboard Controller. Responsible for loading the dashboard.
  *
  * @version 1.0
  *
