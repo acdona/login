@@ -19,7 +19,7 @@ if (!defined('R4F5CC')) {
 */
 class AdmsViewFormLevel
 {
-
+    
     private $databaseResult;
     private bool $result;
 
@@ -32,6 +32,7 @@ class AdmsViewFormLevel
     }
 
     public function viewFormLevel() {
+       
         $viewFormLevel = new \App\adms\Models\helper\AdmsRead();
         $viewFormLevel->fullRead("SELECT form.id, form.adms_access_level_id,
                 lev.name name_lev
@@ -39,13 +40,13 @@ class AdmsViewFormLevel
                 INNER JOIN adms_access_levels AS lev ON lev.id=form.adms_access_level_id
                 LIMIT :limit", "limit=1");
 
-        $this->resultadoBd = $viewFormLevel->getReadingResult();
+        $this->databaseResult = $viewFormLevel->getReadingResult();
         if ($this->databaseResult) {
             $this->result = true;
+           
         } else {
             $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Nível de acesso, para formulário novo usuário, não encontrado!</div>";
             $this->result = false;
         }
     }
-
 }
