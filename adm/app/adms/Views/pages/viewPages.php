@@ -64,7 +64,7 @@ if (!defined('R4F5CC')) {
                 <dt class="col-sm-3">Página Publica</dt>
                 <dd class="col-sm-9">
                     <?php 
-                    if($public == 2){
+                    if($public == 1){
                         echo "Sim";
                     }else{
                         echo "Não";
