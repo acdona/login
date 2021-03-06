@@ -11,7 +11,6 @@ if(isset($this->data['sidebarActive'])){
 }
 ?>
 
-<div class="d-flex">
 <nav class="sidebar">
     <ul class="list-unstyled">
     <li class="<?php if($sidebar_active == "dashboard"){ echo 'active'; } ?>"><a href="<?php echo URLADM; ?>dashboard/index"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>

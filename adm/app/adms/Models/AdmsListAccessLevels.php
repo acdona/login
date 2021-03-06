@@ -46,7 +46,7 @@ class AdmsListAccessLevels
         return $this->resultPg;
     }
 
-    public function ListAccessLevels($pag = null) {
+    public function listAccessLevels($pag = null) {
 
         $this->pag = (int) $pag;
         $pagination = new \App\adms\Models\helper\AdmsPagination(URLADM . 'list-access-levels/index');
@@ -56,14 +56,15 @@ class AdmsListAccessLevels
         $this->resultPg =$pagination->getResult();
 
 
-        $ListAccessLevels  = new \App\adms\Models\helper\AdmsRead();
-        $ListAccessLevels->fullRead("SELECT id, name, order_levels
+        $listAccessLevels  = new \App\adms\Models\helper\AdmsRead();
+        $listAccessLevels->fullRead("SELECT id, name, order_levels
                                FROM adms_access_levels
                                WHERE order_levels >=:order_levels
+                               ORDER BY order_levels ASC
                                LIMIT :limit OFFSET :offset", "order_levels=" . $_SESSION['order_levels']."&limit={$this->limitResult}&offset={$pagination->getOffset()}
                                ");
 
-        $this->databaseResult = $ListAccessLevels->getReadingResult();
+        $this->databaseResult = $listAccessLevels->getReadingResult();
         if($this->databaseResult) {
             $this->result = true;
         }else{

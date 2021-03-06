@@ -37,8 +37,8 @@ class ListAccessLevels
 
         } else
         {
-            $this->dados['listAccessLevels'] = [];
-            $this->dados['pagination'] = null;
+            $this->data['listAccessLevels'] = [];
+            $this->data['pagination'] = null;
         }
         $this->data['pag'] = $this->pag;
         $this->data['sidebarActive'] = "list-access-levels";

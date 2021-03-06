@@ -7,7 +7,7 @@ if (!defined('R4F5CC')) {
 
 <div class="content p-1 head-cor">
     <div class="list-group-item">
-        <div class="list-group-item">
+        
             <div class="d-flex">
                 <div class="mr-auto p-2">
                     <h2 class="display-4 title">Listagem - Níveis de Acesso</h2>
@@ -85,6 +85,6 @@ if (!defined('R4F5CC')) {
                     <?php echo $this->data['pagination']; ?>             
                 </nav>
             </div>
-        </div>
+       
     </div>
 </div>
