@@ -70,7 +70,7 @@ class LoadAdmPage
     }
 
     private function restrictedPage() {
-        $this->restrictedPage = ["Dashboard", "ListColors", "ListSitsUsers", "ListUsers", "ListConfEmails", "ViewUser", "ViewColor", "ViewSitsUser", "ViewConfEmail", "EditColor", "EditConfEmail", "EditSitsUser", "EditUser", "AddColor", "AddSitsUser", "AddUser", "AddConfEmail", "EditUserPassword", "EditUserImage", "DeleteUser", "DeleteColor", "DeleteConfEmail", "DeleteSitsUser", "ViewProfile", "EditProfile", "EditProfileImage", "EditProfilePassword", "ListAccessLevels", "ViewAccessLevel", "EditAccessLevel", "AddAccessLevel", "DeleteAccessLevel","EditFormLevel", "ViewFormLevel", "EditConfEmailPassword", "OrderAccessLevel", "ListSitsPages"];
+        $this->restrictedPage = ["Dashboard", "ListColors", "ListSitsUsers", "ListUsers", "ListConfEmails", "ViewUser", "ViewColor", "ViewSitsUser", "ViewConfEmail", "EditColor", "EditConfEmail", "EditSitsUser", "EditUser", "AddColor", "AddSitsUser", "AddUser", "AddConfEmail", "EditUserPassword", "EditUserImage", "DeleteUser", "DeleteColor", "DeleteConfEmail", "DeleteSitsUser", "ViewProfile", "EditProfile", "EditProfileImage", "EditProfilePassword", "ListAccessLevels", "ViewAccessLevel", "EditAccessLevel", "AddAccessLevel", "DeleteAccessLevel","EditFormLevel", "ViewFormLevel", "EditConfEmailPassword", "OrderAccessLevel", "ListSitsPages", "AddSitsPages"];
        
         if(in_array($this->urlController, $this->restrictedPage)) {
         
