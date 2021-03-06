@@ -42,14 +42,6 @@ if (isset($this->data['form'])) {
                 
                 ?>">
 
-                  <label for="order_levels"><span class="text-danger">*</span> Número do nível</label>
-                    <input name="order_levels" type="text" class="form-control" id="order_levels" placeholder="Digite o número do nível" required value="<?php
-                if (isset($formData['order_levels'])) {
-                    echo $formData['order_levels'];
-                }
-                
-                ?>">
-
                 <p>
                     <br>
                     <span class="text-danger">*</span> Campo Obrigatório<br><br>

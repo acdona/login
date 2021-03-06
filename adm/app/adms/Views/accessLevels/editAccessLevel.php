@@ -73,15 +73,6 @@ if (isset($this->data['form'][0])) {
                     ?>" autofocus required>
             </div>
 
-            <div class="form-group">
-                    <label for="order_levels"><span class="text-danger">*</span> Nível:</label>
-                    <input name="order_levels" type="text"  class="form-control" id="order_levels" placeholder="Número do Nível" value="<?php
-                    if (isset($formData['order_levels'])) {
-                        echo $formData['order_levels'];
-                    }
-                    ?>" required>
-            </div>
-
             <p>
                 <span class="text-danger">*</span> Campo Obrigatório
             </p>
