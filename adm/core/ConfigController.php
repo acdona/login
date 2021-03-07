@@ -143,7 +143,8 @@ class ConfigController extends Config
      */
     public function load(): void {
        
-        $loadAdmPage = new \Core\LoadAdmPage();
+        $loadAdmPage = new \Core\LoadAdmPageLevel();
+       // $loadAdmPage = new \Core\LoadAdmPage();
         $loadAdmPage->loadPage($this->urlController, $this->urlMethod, $this->urlParameter); 
           
         
