@@ -23,7 +23,7 @@ class AdmsListTypesPages
     private $databaseResult;
     private bool $result;
     private $pag;
-    private $limitResult = 40;
+    private $limitResult = 5;
     private $resultPg;
 
     function getDatabaseResult()

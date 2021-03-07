@@ -333,3 +333,81 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).ready(function () {
+    $('#sits_pages').on("submit", function () {
+        if ($('#name').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo nome!</div>");
+            return false;
+        } else if ($('#adms_color_id').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo cor!</div>");
+            return false;
+        }
+    });
+});
+
+$(document).ready(function () {
+    $('#groups_pages').on("submit", function () {
+        if ($('#name').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo nome!</div>");
+            return false;
+        }
+    });
+});
+
+$(document).ready(function () {
+    $('#types_pages').on("submit", function () {
+        if ($('#type').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo tipo!</div>");
+            return false;
+        } else if ($('#name').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo nome!</div>");
+            return false;
+        }
+    });
+});
+
+$(document).ready(function () {
+    $('#pages').on("submit", function () {
+        if ($('#name_page').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo nome!</div>");
+            return false;
+        } else if ($('#controller').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo classe!</div>");
+            return false;
+        } else if ($('#method').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo metodo!</div>");
+            return false;
+        } else if ($('#menu_controller').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo classe no menu!</div>");
+            return false;
+        } else if ($('#menu_method').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo método no menu!</div>");
+            return false;
+        } else if ($('#public').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo página pública!</div>");
+            return false;
+        } else if ($('#adms_sits_pgs_id').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo situação da página!</div>");
+            return false;
+        } else if ($('#adms_groups_pgs_id').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo grupo da página!</div>");
+            return false;
+        } else if ($('#adms_types_pgs_id').val() === "") {
+            $(".msg").html("<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo tipo da página!</div>");
+            return false;
+        }
+    });
+});
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+function loadBtnSynchronize(){
+    $("#btn-synchronize").html("<button class='btn btn-warning btn-sm' type='button' disabled><span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span> Sincronizado...</button>");
+}
+
+function loadLinkSynchronize(){
+    $("#link-synchronize").html("<span class='dropdown-item'>Sincronizado...</span>");
+}

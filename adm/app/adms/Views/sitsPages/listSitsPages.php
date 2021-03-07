@@ -10,7 +10,7 @@ if(!defined('R4F5CC')){
     <div class="list-group-item">
         <div class="d-flex">
             <div class="mr-auto p-2">
-                <h2 class="display-4 title">Listar Situação para Páginas</h2>
+                <h2 class="display-4 title">Listar Situações para Páginas</h2>
             </div>
             <div class="p-2">
                 <a href="<?php echo URLADM ?>add-sits-pages/index" class="btn btn-outline-success btn-sm">Cadastrar</a>
@@ -28,7 +28,7 @@ if(!defined('R4F5CC')){
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
+                        <th>Situação</th>
                         <th class="text-center">Ações</th>
                     </tr>
                 </thead>

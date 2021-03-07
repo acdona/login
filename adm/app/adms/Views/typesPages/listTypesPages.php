@@ -9,7 +9,7 @@ if (!defined('R4F5CC')) {
     <div class="list-group-item">
         <div class="d-flex">
             <div class="mr-auto p-2">
-                <h2 class="display-4 title">Listar Tipo de Páginas</h2>
+                <h2 class="display-4 title">Listar Tipos de Páginas</h2>
             </div>
             <div class="p-2">
                 <a href="<?php echo URLADM ?>add-types-pages/index" class="btn btn-outline-success btn-sm">Cadastrar</a>

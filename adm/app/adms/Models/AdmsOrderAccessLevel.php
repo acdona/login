@@ -33,7 +33,7 @@ class AdmsOrderAccessLevel
         return $this->databaseResult;
     }
 
-    function getDataBaseResultPrev() {
+    function getDatabaseResultPrev() {
         return $this->databaseResultPrev;
     }
 
@@ -86,11 +86,12 @@ class AdmsOrderAccessLevel
       
         $moveDown = new \App\adms\Models\helper\AdmsUpdate();
         $moveDown->exeUpdate("adms_access_levels", $this->data, "WHERE id=:id", "id={$this->databaseResultPrev[0]['id']}");
-      
+        
         if($moveDown->getResult()){
 
             $this->editMoveUp();
         } else {
+            
             $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Ordem do nível de acesso não editada!</div>";
             $this->result = false;
         }
