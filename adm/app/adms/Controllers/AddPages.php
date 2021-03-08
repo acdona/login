@@ -25,8 +25,8 @@ class AddPages
     public function index() {
 
         $this->formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        if (!empty($this->formData['AddPage'])) {
-            unset($this->formData['AddPage']);
+        if (!empty($this->formData['AddPages'])) {
+            unset($this->formData['AddPages']);
             $addPages = new \App\adms\Models\AdmsAddPages();
             $addPages->create($this->formData);
             if ($addPages->getResult()) {

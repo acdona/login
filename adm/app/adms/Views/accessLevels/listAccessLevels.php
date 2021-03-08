@@ -13,7 +13,9 @@ if (!defined('R4F5CC')) {
             </div>
             <div class="p-2">
                 <span class="d-none d-lg-block">
-                    <a href="<?php echo URLADM ?>add-access-level/index" class="btn btn-outline-success btn-sm">Cadastrar</a>
+                    <span id="btn-register">
+                        <a href="<?php echo URLADM ?>add-access-level/index" class="btn btn-outline-success btn-sm"  onclick="loadBtnRegister()">Cadastrar</a>
+                    </span>
                     <span id="btn-synchronize">
                         <a href="<?php echo URLADM ?>sync-pages-levels/index" class="btn btn-outline-warning btn-sm" onclick="loadBtnSynchronize()">Sincronizar</a>  
                     </span>
@@ -23,7 +25,7 @@ if (!defined('R4F5CC')) {
                         Ações
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                        <a class="dropdown-item" href="<?php echo URLADM; ?>add-access-level/index">Cadastrar</a>
+                        <a class="dropdown-item" href="<?php echo URLADM; ?>add-access-level/index" onclick="loadBtnRegister()">Cadastrar</a>
                         <span id="link-synchronize">
                             <a class="dropdown-item" href="<?php echo URLADM; ?>sync-pages-levels/index" onclick="loadLinkSynchronize()">Sincronizar</a>
                         </span>

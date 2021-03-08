@@ -76,7 +76,9 @@ if (isset($this->data['form'])) {
                     <label>
                         <span tabindex="0" data-toggle="tooltip" data-placement="top" data-html="true" title="Página de icone: <a href='https://fontawesome.com/icons?d=gallery' target='_blank'>fontawesome</a>. Somente inserir o nome, Ex: fas fa-volume-up">
                             <i class="fas fa-question-circle"></i>
-                        </span> Ícone</label>
+                        </span> Ícone
+                    </label>
+
                     <input name="icon" type="text" id="icon" class="form-control" placeholder="Ícone a ser apresentado no menu" value="<?php
                     if (isset($formData['icon'])) {
                         echo $formData['icon'];
@@ -171,7 +173,7 @@ if (isset($this->data['form'])) {
             <p>
                 <span class="text-danger">*</span> Campo Obrigatório
             </p>
-            <input name="AddPage" type="submit" class="btn btn-outline-success btn-sm" value="Cadastrar">
+            <input name="AddPages" type="submit" class="btn btn-outline-success btn-sm" value="Cadastrar">
         </form>
     </div>
 </div>

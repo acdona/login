@@ -12,7 +12,9 @@ if (!defined('R4F5CC')) {
                 <h2 class="display-4 title">Listar Páginas</h2>
             </div>
             <div class="p-2">
-                <a href="<?php echo URLADM ?>add-pages/index" class="btn btn-outline-success btn-sm">Cadastrar</a>
+                <span id="btn-register">
+                   <a href="<?php echo URLADM ?>add-pages/index" class="btn btn-outline-success btn-sm" onclick="loadBtnRegister()">Cadastrar</a>
+                </span>
             </div>
         </div>
         <hr class="hr-title">

@@ -56,9 +56,9 @@ class LoadAdmPageLevel
     }
 
     private function loadMethod() {
-        $classload = new $this->class();
-        if (method_exists($classload, $this->urlMethod)) {
-            $classload->{$this->urlMethod}($this->urlParameter);
+        $classLoad = new $this->class();
+        if (method_exists($classLoad, $this->urlMethod)) {
+            $classLoad->{$this->urlMethod}($this->urlParameter);
         } else {
             die("Erro: Por favor tente novamente. Caso o problema persista, entre em contato o administrador " . EMAILADM . "!<br>");
         }

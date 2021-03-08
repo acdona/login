@@ -33,7 +33,7 @@ class AdmsAddPages
 
         $this->dataExitVal['icon'] = $this->data['icon'];
         $this->dataExitVal['note'] = $this->data['note'];
-        unset($this->data['note'], $this->data['note']);
+        unset($this->data['note'], $this->data['icon']);
 
         $valEmptyField = new \App\adms\Models\helper\AdmsValEmptyField();
         $valEmptyField->validateData($this->data);

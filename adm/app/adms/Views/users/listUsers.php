@@ -13,12 +13,11 @@ if (!defined('R4F5CC')) {
                     <h2 class="display-4 title">Listagem - Usuários</h2>
                 </div>
                 <div class="p-2">
-                <?php
+                <?php /** Checks whether the button will be displayed to the logged in user, according to their level of access. */
+                    if ($this->data['button']['add_user']) {
 
-                     if ($this->data['button']['add_user']) {
-
-                    echo "<a href='" . URLADM . "add-user/index' class='btn btn-outline-success btn-sm'>Cadastrar</a>";
-                }
+                       echo "<a href='" . URLADM . "add-user/index' class='btn btn-outline-success btn-sm'>Cadastrar</a>";
+                    }
                 ?>
                 </div>
             </div>
@@ -44,7 +43,7 @@ if (!defined('R4F5CC')) {
                     </thead>
                     <tbody>
                         <?php
-                            //Read the record array, returned from the database.
+                            //Reading the returned array  from the database.
                             foreach ($this->data['listUsers'] as $user) {
                                 //The extract function is used to extract the array and print using the key name.
                                 extract($user);
@@ -59,19 +58,57 @@ if (!defined('R4F5CC')) {
                             
                             <td class="text-center">
                                 <span class="d-none d-lg-block">
-                                    <a href="<?php echo URLADM . 'view-user/index/' . $id; ?>" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                                    <a href="<?php echo URLADM . 'edit-user/index/' . $id; ?>" class="btn btn-outline-warning btn-sm">Editar</a>
-                                    <a href="<?php echo URLADM . 'delete-user/index/' . $id; ?>" class="btn btn-outline-danger btn-sm" data-confirm="Excluir">Apagar</a> 
+
+                                <?php /** Checks whether the button will be displayed to the logged in user, according to their level of access. */
+                                    if ($this->data['button']['view_user']) {
+
+                                    echo "<a href='" . URLADM . "view-user/index/$id' class='btn btn-outline-primary btn-sm'>Visualizar</a>";
+                                    }
+                                ?>
+                                    
+                                <?php
+                                    if ($this->data['button']['view_user']) {
+
+                                    echo "<a href='" . URLADM . "edit-user/index/$id' class='btn btn-outline-warning btn-sm'>Editar</a>";
+                                    }
+                                ?>
+
+                                <?php
+                                    if ($this->data['button']['view_user']) {
+
+                                    echo "<a href='" . URLADM . "delete-user/index/$id' class='btn btn-outline-danger btn-sm' data-confirm='Excluir'>Apagar</a>";
+                                    }
+                                ?>
+
                                 </span>
                                 <div class="dropdown d-block d-lg-none">
-                                    <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Ações
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                        <a class="dropdown-item" href="<?php echo URLADM . 'view-user/index/' . $id; ?>">Visualizar</a>
-                                        <a class="dropdown-item" href="<?php echo URLADM . 'edit-user/index/' . $id; ?>">Editar</a>
-                                        <a class="dropdown-item" href="<?php echo URLADM . 'delete-user/index/' . $id; ?>" data-confirm="Excluir">Apagar</a>
-                                    </div>
+                                            <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Ações
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+
+                                                <?php /** Checks whether the button will be displayed to the logged in user, according to their level of access. */
+                                                    if ($this->data['button']['view_user']) {
+
+                                                    echo "<a class='dropdown-item' href='" . URLADM . "view-user/index/$id'>Visualizar</a>";
+                                                    }
+                                                ?>
+                                                    
+                                                <?php
+                                                    if ($this->data['button']['view_user']) {
+
+                                                        echo "<a class='dropdown-item' href='" . URLADM . "edit-user/index/$id'>Editar</a>";
+                                                    }
+                                                ?>
+
+                                                <?php
+                                                    if ($this->data['button']['view_user']) {
+
+                                                        echo "<a class='dropdown-item' href='" . URLADM . "delete-user/index/$id' data-confirm='Excluir'>Apagar</a>";
+                                                
+                                                    }
+                                                ?>
+                                         </div>
                                 </div>
                             </td>
                         </tr>
