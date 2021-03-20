@@ -16,19 +16,17 @@ if (!defined('R4F5CC')) {
  * @access public
  *
 */
-class PdfUser
-{
-    private array $data;
+class PdfUser {
 
-    public function generatePdf()
-    {       
+    private $dados;
+
+    public function gerarPdf() {
         $listUsers = new \App\adms\Models\AdmsListUserPdf();
-        $this->data = $listUsers->generatePdf();
-
-        $loadView = new \Core\ConfigView("adms/Views/user/generatePdfUser" , $this->data);
-        $loadView->generatePdf();
-    }
-    
+        $this->dados = $listUsers->generatePdf();
+       // var_dump($this->dados); exit("dentro da control");
+        $carregarView = new \Core\ConfigView("adms/Views/users/gerarPdfUser", $this->dados);
+        $carregarView->gerarPdf();
+    }   
 
 }
 

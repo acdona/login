@@ -1,6 +1,8 @@
 <?php
 namespace Core;
 
+use Dompdf\Dompdf;
+
 if (!defined('R4F5CC')) { 
     header("Location: /");
     die("Erro: Página não encontrada!");
@@ -63,17 +65,28 @@ class ConfigView
 
 
        public function renderLogin() {
-        if(file_exists('app/' . $this->name . '.php')){
-            include 'app/adms/Views/include/header_login.php';
+            if(file_exists('app/' . $this->name . '.php')){
+                include 'app/adms/Views/include/header_login.php';
+                include 'app/' . $this->name . '.php';
+                include 'app/adms/Views/include/footer_login.php';
+                //     include 'app/adms/Views/include/libraries_js.php';
+            } else {
+                // die("Erro: Por favor tente novamente. Caso o problema persista, entre em contato com o administrador " . EMAILADM . "<br>");
+            echo "Erro ao carregar a view: {$this->name}";
+            // when finished delete the lines above -> only  development version
+            // $urlDestiny = URLADM . "error/index";
+            // header("Location: $urlDestiny");
+            }
+         }
+
+
+    public function gerarPdf()
+    {
+        if (file_exists('app/' . $this->name . '.php')) {
+            $domPdf = new Dompdf();
             include 'app/' . $this->name . '.php';
-            include 'app/adms/Views/include/footer_login.php';
-       //     include 'app/adms/Views/include/libraries_js.php';
-        } else {
-            // die("Erro: Por favor tente novamente. Caso o problema persista, entre em contato com o administrador " . EMAILADM . "<br>");
-           echo "Erro ao carregar a view: {$this->name}";
-           // when finished delete the lines above -> only  development version
-           // $urlDestiny = URLADM . "error/index";
-           // header("Location: $urlDestiny");
+        }else{
+            echo "Erro ao carregar a Página: {$this->name}";
         }
     }
 
