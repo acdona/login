@@ -13,9 +13,11 @@ if (!defined('R4F5CC')) {
                     <h2 class="display-4 title">Listagem - Usuários</h2>
                 </div>
                 <div class="p-2">
+
+
                 <?php /** Checks whether the button will be displayed to the logged in user, according to their level of access. */
                     if ($this->data['button']['add_user']) {
-
+                       echo "<a href='" . URLADM . "pdf-user/generatePdf' class='btn btn-outline-danger btn-sm'>Gerar PDF</a> ";
                        echo "<a href='" . URLADM . "add-user/index' class='btn btn-outline-success btn-sm'>Cadastrar</a>";
                     }
                 ?>
