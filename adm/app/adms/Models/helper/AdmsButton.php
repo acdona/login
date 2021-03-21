@@ -24,7 +24,6 @@ class AdmsButton
 
     public function buttonPermission(array $data) {
         $this->data = $data;
-// var_dump($this->data);
 
         foreach ($this->data as $key => $button) {
             extract($button);  

@@ -80,7 +80,7 @@ class ConfigView
          }
 
 
-    public function gerarPdf()
+    public function generatePdf()
     {
         if (file_exists('app/' . $this->name . '.php')) {
             $domPdf = new Dompdf();

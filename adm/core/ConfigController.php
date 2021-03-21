@@ -92,11 +92,6 @@ class ConfigController extends Config
      
         }
 
-        /** testing */
-        // echo "Controller: " . $this->urlController . "<br>";
-        // echo "Método: " . $this->urlMethod . "<br>";
-        // echo "Parâmetro: " . $this->urlParameter . "<br>";
-    
     }
    
     private function slugController($slugController) {

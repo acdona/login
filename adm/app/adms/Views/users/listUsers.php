@@ -16,12 +16,21 @@ if (!defined('R4F5CC')) {
 
 
                 <?php /** Checks whether the button will be displayed to the logged in user, according to their level of access. */
-                         echo "<a href='" . URLADM . "pdf-user/gerar-pdf' class='btn btn-outline-danger btn-sm'>Gerar PDF</a> ";
+
+                    if ($this->data['button']['pdf_user']) {
+                        
+                        echo "<a href='" . URLADM . "pdf-user/generate-pdf' class='btn btn-outline-danger btn-sm'>Gerar PDF</a> ";
+                    }
+                ?>
+
+                <?php /** Checks whether the button will be displayed to the logged in user, according to their level of access. */
+                
                     if ($this->data['button']['add_user']) {
                       
                        echo "<a href='" . URLADM . "add-user/index' class='btn btn-outline-success btn-sm'>Cadastrar</a>";
                     }
                 ?>
+
                 </div>
             </div>
             <hr class="hr-title">
@@ -63,6 +72,13 @@ if (!defined('R4F5CC')) {
                                 <span class="d-none d-lg-block">
 
                                 <?php /** Checks whether the button will be displayed to the logged in user, according to their level of access. */
+                                    if ($this->data['button']['pdf_user']) {
+
+                                    echo "<a href='" . URLADM . "pdf-user-detail/view-user-pdf/$id' class='btn btn-outline-danger btn-sm'>Gerar PDF</a>";
+                                    }
+                                ?>
+
+                                <?php /** Checks whether the button will be displayed to the logged in user, according to their level of access. */
                                     if ($this->data['button']['view_user']) {
 
                                     echo "<a href='" . URLADM . "view-user/index/$id' class='btn btn-outline-primary btn-sm'>Visualizar</a>";
@@ -70,14 +86,14 @@ if (!defined('R4F5CC')) {
                                 ?>
                                     
                                 <?php
-                                    if ($this->data['button']['view_user']) {
+                                    if ($this->data['button']['edit_user']) {
 
                                     echo "<a href='" . URLADM . "edit-user/index/$id' class='btn btn-outline-warning btn-sm'>Editar</a>";
                                     }
                                 ?>
 
                                 <?php
-                                    if ($this->data['button']['view_user']) {
+                                    if ($this->data['button']['delete_user']) {
 
                                     echo "<a href='" . URLADM . "delete-user/index/$id' class='btn btn-outline-danger btn-sm' data-confirm='Excluir'>Apagar</a>";
                                     }
@@ -90,6 +106,14 @@ if (!defined('R4F5CC')) {
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
 
+
+                                                <?php /** Checks whether the button will be displayed to the logged in user, according to their level of access. */
+                                                    if ($this->data['button']['pdf_user_detail']) {
+                                                                                                       
+                                                    echo "<a class='dropdown-item' href='" . URLADM . "pdf-user-detail/view-user-pdf/$id'>Gerar PDF</a>";
+                                                    }
+                                                ?>
+
                                                 <?php /** Checks whether the button will be displayed to the logged in user, according to their level of access. */
                                                     if ($this->data['button']['view_user']) {
 
@@ -98,14 +122,14 @@ if (!defined('R4F5CC')) {
                                                 ?>
                                                     
                                                 <?php
-                                                    if ($this->data['button']['view_user']) {
+                                                    if ($this->data['button']['edit_user']) {
 
                                                         echo "<a class='dropdown-item' href='" . URLADM . "edit-user/index/$id'>Editar</a>";
                                                     }
                                                 ?>
 
                                                 <?php
-                                                    if ($this->data['button']['view_user']) {
+                                                    if ($this->data['button']['delete_user']) {
 
                                                         echo "<a class='dropdown-item' href='" . URLADM . "delete-user/index/$id' data-confirm='Excluir'>Apagar</a>";
                                                 

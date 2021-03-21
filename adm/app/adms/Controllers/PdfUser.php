@@ -7,7 +7,7 @@ if (!defined('R4F5CC')) {
 }
 
 /**
- * PdfUser . Responsible for  printing users.
+ * PdfUser . Responsible for printing users.
  *
  * @version 1.0
  *
@@ -18,14 +18,14 @@ if (!defined('R4F5CC')) {
 */
 class PdfUser {
 
-    private $dados;
+    private $data;
 
-    public function gerarPdf() {
+    public function generatePdf() {
         $listUsers = new \App\adms\Models\AdmsListUserPdf();
-        $this->dados = $listUsers->generatePdf();
-       // var_dump($this->dados); exit("dentro da control");
-        $carregarView = new \Core\ConfigView("adms/Views/users/gerarPdfUser", $this->dados);
-        $carregarView->gerarPdf();
+        $this->data = $listUsers->generatePdf();
+       // var_dump($this->data); exit("dentro da control");
+        $carregarView = new \Core\ConfigView("adms/Views/users/generatePdfUser", $this->data);
+        $carregarView->generatePdf();
     }   
 
 }

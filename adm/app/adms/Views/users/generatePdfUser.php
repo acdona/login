@@ -6,15 +6,15 @@ if (!defined('R4F5CC')) {
     
 }
 
-//var_dump($this->dados);     exit("Chegou na view");
-if(isset($this->dados)){
+//var_dump($this->data);     exit("Chegou na view");
+if(isset($this->data)){
                       
-    $listUsers = $this->dados;
-  //  var_dump($this->listUsers);     exit("Chegou na view");
+    $listUsers = $this->data;
+    //var_dump($listUsers);     exit("Chegou na view2");
 
 }
-exit("deu ruim");
-$listUsers = '<h1 style="text-align: center;">Celke - Listar Usuários</h1>';
+//exit("deu ruim");
+$listUsers = '<h1 style="text-align: center;">AMACD - Listar Usuários</h1>';
 $listUsers .= '<table border=1 style="text-align: center; width:100%;"';  
 $listUsers .= '<thead>';
 $listUsers .= '<tr>';
@@ -24,7 +24,7 @@ $listUsers .= '<th>E-mail</th>';
 $listUsers .= '</thead>';
 $listUsers .= '<tbody>';
 
-foreach ($this->dados as $listUser) {
+foreach ($this->data as $listUser) {
     extract($listUser);
    
     $listUsers .= '<tr><td>'.$id . "</td>";
@@ -40,4 +40,4 @@ $dompdf->loadHtml($listUsers);
 $dompdf->setPaper('A4');
 
 $dompdf->render();
-$dompdf->stream("listar_usuarios.pdf", array("Attachment" => true));
+$dompdf->stream("listar_usuarios.pdf", array("Attachment" => false));
